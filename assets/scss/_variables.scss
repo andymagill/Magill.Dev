@@ -1,0 +1,28 @@
+
+// Size
+	$size: (
+		site-width:		1440px,
+		element-margin: 40px,
+		border: 1px,
+	);
+
+// Font
+	$font: (
+		body:			('Roboto', sans-serif),
+		heading:		('Roboto Slab', serif),
+	);
+
+// Palette
+	$palette: (
+		bg:				#EFEFEF,
+		fg:				#666666,
+		heading:		#333333,
+		border: 		#999999,
+	);
+
+// Duration
+	$duration: (
+		short:			0.2s,
+		moderate:		0.5s,
+		long:			0.8s,
+	);

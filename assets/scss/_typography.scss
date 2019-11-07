@@ -1,0 +1,102 @@
+
+/* Type */
+
+html {
+	font-size:62.5%;
+}
+body {
+	font: normal 1.6rem _font(body);
+	color:_palette(fg);
+}
+h1, h2, h3, h4, h5, h6 {
+	color: _palette(heading);
+	font-weight: _font(heading);
+	line-height: 1.5;
+
+	a {
+		color: inherit;
+	}
+}
+h1 {
+	font-size: 2.4rem;
+}
+
+strong, b {
+	color: _palette(heading);
+}
+input, select, textarea {
+	color: _palette(fg);
+	font-family: _font(body);
+	font-size: 1.6rem;
+	font-weight: normal;
+	line-height: 1.75;
+}
+
+p {
+	margin: 0 0 1em 0;
+}
+
+sub {
+	font-size: 0.8em;
+	position: relative;
+	top: 0.5em;
+}
+
+sup {
+	font-size: 0.8em;
+	position: relative;
+	top: -0.5em;
+}
+
+blockquote {
+	border-left: solid _size(border) _palette(border);
+	font-style: italic;
+	margin: 0 0 _size(element-margin) 0;
+	padding: (_size(element-margin) / 4) 0 (_size(element-margin) / 4) _size(element-margin);
+}
+
+	code {
+		background: _palette(border-bg);
+		border-radius: _size(border-radius);
+		border: solid _size(border-width) _palette(border);
+		font-family: _font(family-fixed);
+		font-size: 0.9em;
+		margin: 0 0.25em;
+		padding: 0.25em 0.65em;
+	}
+
+	pre {
+		-webkit-overflow-scrolling: touch;
+		font-family: _font(family-fixed);
+		font-size: 0.9em;
+		margin: 0 0 _size(element-margin) 0;
+
+		code {
+			display: block;
+			line-height: 1.75;
+			padding: 1em 1.5em;
+			overflow-x: auto;
+		}
+	}
+
+	hr {
+		border: 0;
+		border-bottom: solid _size(border-width) _palette(border);
+		margin: _size(element-margin) 0;
+
+		&.major {
+			margin: (_size(element-margin) * 1.5) 0;
+		}
+	}
+
+	.align-left {
+		text-align: left;
+	}
+
+	.align-center {
+		text-align: center;
+	}
+
+	.align-right {
+		text-align: right;
+	}
