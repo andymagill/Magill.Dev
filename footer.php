@@ -1,17 +1,14 @@
-			<!-- footer -->
-			<footer class="footer" role="contentinfo">
 
-				<!-- copyright -->
+			<footer class="footer" role="contentinfo">
 				<p class="copyright">
 					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>.
 				</p>
 				<!-- /copyright -->
-
 			</footer>
 			<!-- /footer -->
 
 		</div>
-		<!-- /wrapper -->
+		<!-- /page -->
 
 		<?php wp_footer(); ?>
 

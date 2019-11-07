@@ -19,30 +19,19 @@
 
 
 		<!--
-			Hey there!  What a smart move to take a look at my code.
-			Who knows what crazy stuff I could have put in here if you didn't check.
+			Hey there!  I'm thrilled you are interested enough to look at my code.
+			Who knows what crazy stuff I could have put in here if you didn't check!
+
 			Do you like riddles?
 			There is an ancient invention still used in some parts of the world today that allows people to see through walls.
 			What is it?
+
 			Scroll down for the answer.
 		-->
 
 
-		<!-- wrapper -->
-		<div class="wrapper">
-
-			<!-- header -->
+		<div class="page">
 			<header class="header clear" role="banner">
-
-					<!-- logo -->
-					<div class="logo">
-						<a href="<?php echo home_url(); ?>">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
-						</a>
-					</div>
-					<!-- /logo -->
-
-					<!-- nav -->
 					<nav class="nav" role="navigation">
 						<?php
 						wp_nav_menu(
@@ -54,6 +43,5 @@
 						?>
 					</nav>
 					<!-- /nav -->
-
 			</header>
 			<!-- /header -->
