@@ -25,10 +25,6 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* wordpress */
-
-body.admin-bar {
-	margin-top: 32px;
-}
 .alignnone {
 	margin:5px 20px 20px 0;
 }
@@ -142,5 +138,58 @@ a img.aligncenter {
 	h2,
 	h3 {
 		page-break-after:avoid;
+	}
+}
+
+
+//helper classes
+
+%nota-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	& > li {
+		display: inline-block;
+	}
+}
+%nota-button {
+	border: 0 none;
+	background: transparent;
+	cursor: pointer;
+	padding: 0;
+	border-radius: 0;
+}
+%flex-equal-width-col {
+	flex-grow: 1;
+	flex-basis: 0;
+}
+%fas {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+}
+
+%btn {
+	display: inline-block;
+	min-width: 160px;
+	padding: 6px 25px;
+	font-size: 1.4rem;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+
+	transition: background _duration(short), color _duration(short);
+}
+
+.white_btn {
+
+	@extend %btn;
+	background: white;
+	color: _palette(link);
+	border: 1px solid white;
+
+	&:hover{
+		background: transparent;
+		color: white;
 	}
 }

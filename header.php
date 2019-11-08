@@ -32,16 +32,8 @@
 
 		<div class="page">
 			<header class="header clear" role="banner">
-					<nav class="nav" role="navigation">
-						<?php
-						wp_nav_menu(
-							array(
-								'theme_location'  => 'header-menu',
-								'container_class' => 'menu-{menu slug}-container'
-							)
-						);
-						?>
-					</nav>
-					<!-- /nav -->
+				<?php
+					magillDev_the_menu('header-menu');
+				?>
 			</header>
 			<!-- /header -->

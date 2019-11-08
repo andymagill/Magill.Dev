@@ -1,6 +1,8 @@
 <!-- sidebar -->
 <aside class="sidebar" role="complementary">
 
+	<?php magillDev_get_menu('sidebar-menu'); ?>
+
 	<?php get_template_part('searchform'); ?>
 
 	<div class="sidebar-widget">

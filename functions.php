@@ -111,9 +111,30 @@ function magillDev_register_menus()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
         'header-menu' => __('Header Menu', 'magillDev'), // Main Navigation
+        'middle-menu' => __('Middle Menu', 'magillDev'),
         'sidebar-menu' => __('Sidebar Menu', 'magillDev'), // Sidebar Navigation
-        'extra-menu' => __('Extra Menu', 'magillDev') // Extra Navigation if needed (duplicate as many as you need!)
+        'footer-menu' => __('Footer Menu', 'magillDev')
     ));
+}
+
+
+
+// Get menu helper function
+function magillDev_the_menu($menu) {
+
+	if ( has_nav_menu($menu) ) {
+	?>
+		<nav class="nav" role="navigation">
+			<?php wp_nav_menu(
+				array(
+					'theme_location'  => $menu ,
+					'container'  => '' ,
+				)
+			); ?>
+		</nav>
+		<!-- /nav -->
+	<?php
+	}
 }
 
 // Remove invalid rel attribute values in the categorylist
@@ -299,6 +320,7 @@ function magillDev_comments($comment, $args, $depth)
 	<?php endif; ?>
 <?php }
 
+
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
 \*------------------------------------*/
@@ -308,6 +330,7 @@ add_action('init', 'magillDev_header_scripts'); // Add Custom Scripts to wp_head
 add_action('wp_print_scripts', 'magillDev_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'magillDev_styles'); // Add Theme Stylesheet
+add_action('init', 'magillDev_register_menus'); // Add menu locations
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'magillDev_pagination'); // Add Pagination
 

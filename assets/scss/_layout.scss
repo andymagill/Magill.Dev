@@ -1,0 +1,22 @@
+
+header , footer , .middle-nav {
+	nav {
+		ul {
+			@extend %nota-list;
+		}
+	}
+}
+.hero {
+
+	.wrapper {
+		display: flex;
+
+		& > *{
+
+			@extend %flex-equal-width-col;
+		}
+	}
+	h1 {
+		font-weight: normal;
+	}
+}
