@@ -9,7 +9,7 @@
 	External Modules/Files
 \*------------------------------------*/
 
-// Load any external files you have here
+include 'inc/enqueue.php';
 
 /*------------------------------------*\
 	Theme Support
@@ -59,53 +59,6 @@ if (function_exists('add_theme_support'))
 	Functions
 \*------------------------------------*/
 
-
-// Load scripts (header.php)
-function magillDev_header_scripts()
-{
-    if ($GLOBALS['pagenow'] == 'wp-login.php' || is_admin()) {
-
-    	// main JS
-        wp_register_script('magillDev_scripts', get_theme_file_uri() . '/assets/js/admin-scripts.js', array('jquery'), '0.01'); // Custom scripts
-        wp_enqueue_script('magillDev_scripts'); // Enqueue it!
-
-    }
-    else {
-
-    	// main js file
-        wp_register_script('magillDev_scripts', get_theme_file_uri() . '/assets/js/scripts.js', array('jquery'), '0.01');
-        wp_enqueue_script('magillDev_scripts');
-
-        // jquery
-        wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '3.2.1');
-        wp_enqueue_script('jquery');
-
-        // jquery validate
-        wp_register_script('jquery-validate', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js', array(), '1.15');
-        wp_enqueue_script('jquery-validate');
-
-        // google fonts
-        wp_register_script('google-fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,400|Roboto+Slab:300,400', array(), '0.01');
-        wp_enqueue_script('google-fonts');
-    }
-}
-
-// Load conditional scripts
-function magillDev_conditional_scripts()
-{
-    if (is_page('pagenamehere')) {
-        wp_register_script('scriptname', get_theme_file_uri() . '/assets/js/scriptname.js', array('jquery'), '1.0.0'); // Conditional script(s)
-        wp_enqueue_script('scriptname'); // Enqueue it!
-    }
-}
-
-// Load styles
-function magillDev_styles()
-{
-    wp_register_style('magillDev', get_theme_file_uri() . '/assets/css/styles.css', array(), '0.01', 'all');
-    wp_enqueue_style('magillDev'); // Enqueue it!
-}
-
 // Register Navigation
 function magillDev_register_menus()
 {
@@ -137,24 +90,34 @@ function magillDev_the_menu($menu) {
 	}
 }
 
+// Remove Injected classes, ID's and Page ID's from Navigation <li> items
+function magillDev_filter_menu( $var ) {
+
+    if ( is_array( $var ) ) {
+
+        foreach ( $var as $key => $val ) {
+            if ( strpos( $val, 'item' ) > -1 && $val != 'current-menu-item' ) {
+                unset( $var[$key] );
+            }
+        }
+        return $var;
+    }
+    else {
+        return '';
+    }
+}
+
 // Remove invalid rel attribute values in the categorylist
 function remove_category_rel_from_category_list($thelist)
 {
     return str_replace('rel="category tag"', 'rel="tag"', $thelist);
 }
 
-// Add page slug to body class, love this - Credit: Starkers Wordpress Theme
+// Add page slug to body class
 function add_slug_to_body_class($classes)
 {
     global $post;
-    if (is_home()) {
-        $key = array_search('blog', $classes);
-        if ($key > -1) {
-            unset($classes[$key]);
-        }
-    } elseif (is_page()) {
-        $classes[] = sanitize_html_class($post->post_name);
-    } elseif (is_singular()) {
+    if (is_page() || is_singular()) {
         $classes[] = sanitize_html_class($post->post_name);
     }
 
@@ -239,16 +202,10 @@ function magillDev_excerpt($length_callback = '', $more_callback = '')
     echo $output;
 }
 
-// Remove Admin bar
+// show / hide Admin bar
 function magillDev_show_admin_bar()
 {
     return true;
-}
-
-// Remove 'text/css' from our enqueued stylesheet
-function magillDev_style_remove($tag)
-{
-    return preg_replace('~\s+type=["\'][^"\']++["\']~', '', $tag);
 }
 
 // Remove thumbnail width and height dimensions that prevent fluid images in the_thumbnail
@@ -326,13 +283,14 @@ function magillDev_comments($comment, $args, $depth)
 \*------------------------------------*/
 
 // Add Actions
-add_action('init', 'magillDev_header_scripts'); // Add Custom Scripts to wp_head
-add_action('wp_print_scripts', 'magillDev_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
-add_action('wp_enqueue_scripts', 'magillDev_styles'); // Add Theme Stylesheet
 add_action('init', 'magillDev_register_menus'); // Add menu locations
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'magillDev_pagination'); // Add Pagination
+
+add_filter('nav_menu_css_class', 'magillDev_filter_menu', 100, 1); // Remove Navigation <li> injected classes (Commented out by default)
+add_filter('nav_menu_item_id', 'magillDev_filter_menu', 100, 1); // Remove Navigation <li> injected ID (Commented out by default)
+add_filter('page_css_class', 'magillDev_filter_menu', 100, 1); // Remove Navigation <li> Page ID's (Commented out by default)
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
@@ -343,7 +301,7 @@ remove_action('wp_head', 'index_rel_link'); // Index link
 remove_action('wp_head', 'parent_post_rel_link', 10, 0); // Prev link
 remove_action('wp_head', 'start_post_rel_link', 10, 0); // Start link
 remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); // Display relational links for the posts adjacent to the current post.
-remove_action('wp_head', 'wp_generator'); // Display the XHTML generator that is generated on the wp_head hook, WP version
+remove_action('wp_head', 'wp_generator'); // Remove the XHTML generator
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 remove_action('wp_head', 'rel_canonical');
 remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
@@ -358,7 +316,6 @@ add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove 
 add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
 add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
 add_filter('show_admin_bar', 'magillDev_show_admin_bar'); // Remove Admin bar
-add_filter('style_loader_tag', 'magillDev_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
 
