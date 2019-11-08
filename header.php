@@ -29,11 +29,8 @@
 			Scroll down for the answer.
 		-->
 
-
 		<div class="page">
 			<header class="header clear" role="banner">
-				<?php
-					magillDev_the_menu('header-menu');
-				?>
+				<?php magillDev()->render_menus('header-menu'); ?>
 			</header>
 			<!-- /header -->

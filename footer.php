@@ -1,7 +1,6 @@
 
 			<footer class="footer" role="contentinfo">
-
-				<?php magillDev_the_menu('footer-menu'); ?>
+				<?php magillDev()->render_menus('footer-menu'); ?>
 
 				<p class="copyright">
 					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>.

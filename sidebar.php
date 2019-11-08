@@ -1,9 +1,10 @@
 <!-- sidebar -->
 <aside class="sidebar" role="complementary">
 
-	<?php magillDev_get_menu('sidebar-menu'); ?>
-
-	<?php get_template_part('searchform'); ?>
+	<?php
+		magillDev()->render_menus('sidebar-menu');
+		get_template_part('searchform');
+	?>
 
 	<div class="sidebar-widget">
 		<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-1')) ?>

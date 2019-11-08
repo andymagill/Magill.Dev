@@ -6,14 +6,11 @@
 
 ?>
 	<section class="middle-nav">
-		<?php magillDev_the_menu('middle-menu'); ?>
+		<?php magillDev()->render_menus('middle-menu'); ?>
 	</section>
 
 	<main role="main">
-		<!-- section -->
-		<section>
-
-			<h1><?php _e( 'Projects' ); ?></h1>
+		<section class="post-loop">
 
 			<?php get_template_part('template-parts/loop'); ?>
 			<?php get_template_part('template-parts/pagination'); ?>
@@ -21,5 +18,6 @@
 		</section>
 		<!-- /section -->
 	</main>
+	<!-- /main -->
 
 <?php get_footer(); ?>

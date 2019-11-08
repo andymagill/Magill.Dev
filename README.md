@@ -1,11 +1,16 @@
 # Andrew Magill's Portfolio Custom WP Theme 
 
-	Site: [https://magill.dev](https://magill.dev)
-	Description: Custom Wp Theme for Andrew Magill's Portfolio
-	Author: Andrew Magill
-	Author URI: [https://magill.dev](https://magill.dev)
-	Tags: HTML5, CSS3
+This is custom WordPress Theme for Andrew Magill's Portfolio.  
+```
+    Site: [https://magill.dev](https://magill.dev)  
+    Author: Andrew Magill  
+    Author URI: [@andymagill](https://github.com/andymagill)
+```
 
-	License: Creative Commons Attribution 3.0 CC
-	License URI: https://creativecommons.org/licenses/by/3.0/
+## Attribution :
+Theme based on [html5blank](http://html5blank.com/).  
+Some CSS from [html5up](http://html5up.com/).  
 
+## License :
+License: Creative Commons Attribution 3.0 CC  
+License URI: https://creativecommons.org/licenses/by/3.0/
