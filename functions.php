@@ -88,11 +88,11 @@ class magillDev {
 
 			// main js file
 			wp_register_script('theme-scripts', get_theme_file_uri() . '/assets/js/scripts.js', array('jquery'), '0.01');
-			wp_enqueue_script('scripts');
+			wp_enqueue_script('theme-scripts');
 
 			// jquery
-			wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '3.2.1');
-			wp_enqueue_script('jquery');
+			// wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '3.2.1');
+			// wp_enqueue_script('jquery');
 
 			// jquery validate
 			wp_register_script('jquery-validate', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js', array(), '1.15');
@@ -140,6 +140,8 @@ class magillDev {
 					array(
 						'theme_location'  => $menu ,
 						'container'  => '' ,
+						'link_before'  => '<span>' ,
+						'link_after'  => '</span>' ,
 					)
 				); ?>
 			</nav>

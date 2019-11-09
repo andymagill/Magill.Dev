@@ -1,4 +1,6 @@
+.page {
 
+}
 
 header , footer , .middle-nav {
 	nav {
@@ -8,18 +10,99 @@ header , footer , .middle-nav {
 	}
 }
 header {
+	position: fixed;
+	text-align: center;
+	width: 100%;
+	height: 94px;
+	margin-top: 0px;
+
+	transition: margin-top _duration(moderate) , opacity _duration(long);
+
+	.scrolled & {
+		height: 0;
+		margin-top: -100px;
+		opacity: 0;
+	}
+	.scrolled_hard & .nav {
+		opacity: 0;
+	}
 
 	a {
-		padding: 10px 20px;
-		margin: 10px 5px;
+		padding: 15px (_size(gutter)/2);
+		margin: 2px;
+		display: inline-block;
 
 		color: _palette(bg);
+		text-decoration: none;
+		border: 7px double transparent;
+
+		transition: border-color _duration(moderate);
+
+		&:hover {
+			border-color: rgba(255, 255, 255, 0.45);
+
+			span {
+				font-size: 1.4rem;
+			}
+		}
+
+		@include respond(_size(tablet)) {
+			padding: 15px 2vw;
+		}
+
+		@include respond(_size(mobile)) {
+			padding: 15px 1vw;
+		}
+
+		span{
+			font-size: inherit;
+			transition: font-size _duration(moderate);
+
+			@include respond(_size(mobile)) {
+				//font-size: 0;
+			}
+		}
+	}
+	nav {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		padding: 1.5em 0 1.5em 0;
+		z-index: 1;
+		overflow: hidden;
+
+		& > ul {
+			position: relative;
+			display: inline-block;
+			padding: 0 (_size(gutter)/2);
+			margin: 0;
+			line-height: 0px;
+
+			&::before, &::after {
+				content: '';
+				display: block;
+				width: 300%;
+				position: absolute;
+				top: 50%;
+				margin-top: -4px;
+				height: 8px;
+				border-top: solid 2px rgba(255, 255, 255, 0.45);
+				border-bottom: solid 2px rgba(255, 255, 255, 0.45);
+			}
+			&::before {
+				left: 100%;
+				margin-left: 1px;
+			}
+			&::after {
+				right: 100%;
+				margin-right: 1px;
+			}
+		}
 	}
 }
 
-footer{
-
-}
 
 .hero {
 	background-attachment: scroll, fixed, fixed;
@@ -38,15 +121,16 @@ footer{
 		justify-content: space-between;
 
 		margin: 0 auto;
-		padding: (_size(gutter)*1) (_size(gutter)/1) (_size(gutter)*5.5) (_size(gutter)/1);
+		padding: (_size(gutter)*4) _size(gutter) (_size(gutter)*8) _size(gutter);
 		max-width: _size(tablet);
 
+		@include respond(_size(site-width)) {
+			padding: (_size(fluid-gutter)*2.75) (_size(gutter)/1) (_size(fluid-gutter)*5.5) (_size(gutter)/1);
+		}
 		@include respond(_size(tablet)) {
-			padding-top: (_size(gutter)*2);
 			max-width: 800px;
 		}
 		@include respond(_size(mobile)) {
-			padding-bottom: (_size(gutter)*4);
 			flex-direction: column;
 		}
 	}
@@ -60,13 +144,16 @@ footer{
 		@include respond(_size(tablet)) {
 			font-size: 2.4rem;
 		}
-
 		@include respond(_size(mobile)) {
 			text-align: center;
+		}
+		@include respond(_size(tiny)) {
+			font-size: 2.2rem;
 		}
 
 		strong {
 			font-size: 4rem;
+			font-family: _font(heading);
 			color: inherit;
 			display: block;
 			font-weight: 400;
@@ -74,7 +161,6 @@ footer{
 			@include respond(_size(tablet)) {
 				font-size: 3.2rem;
 			}
-
 			@include respond(_size(mobile)) {
 				text-align: center;
 			}
@@ -85,12 +171,11 @@ footer{
 		flex-basis: 68%;
 		width: 68%;
 		text-align: left;
-		margin-top: _size(gutter);
+		margin-top: (_size(gutter)/2);
 		padding-right: _size(gutter);
 
 		@include respond(_size(tablet)) {
 			max-width: 480px;
-			margin-top: (_size(gutter)/2);
 		}
 
 		@include respond(_size(mobile)) {
@@ -111,6 +196,7 @@ footer{
 	}
 	.photo {
 		display: inline-block;
+		position: relative;
 		flex-basis: 32%;
 		width: 32%;
 		min-width: 200px;
@@ -123,6 +209,17 @@ footer{
 			flex-basis: 100%;
 			max-width: 66%;
 			margin: _size(gutter) auto 0 auto;
+		}
+		&::after {
+			box-shadow: inset 0 0 24px 0 rgba(0,0,0,0.7);
+			border-radius: 9999px;
+			content: '';
+			display: block;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			pointer-events: none;
 		}
 	}
 }
