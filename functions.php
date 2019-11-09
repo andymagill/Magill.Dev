@@ -31,7 +31,7 @@ class magillDev {
 	// Register Navigation
 	function register_menu_locations() {
 
-		register_nav_menus(array( // Using array to specify more menus if needed
+		register_nav_menus( array(
 			'header-menu' => __('Header Menu', $theme), // Main Navigation
 			'middle-menu' => __('Middle Menu', $theme),
 			'sidebar-menu' => __('Sidebar Menu', $theme), // Sidebar Navigation
@@ -300,10 +300,15 @@ function magillDev_excerpt($length_callback = '', $more_callback = '')
 	echo $output;
 }
 
-// show / hide Admin bar
+// show Admin bar for admins
 function magillDev_show_admin_bar()
 {
-	return true;
+	if( current_user_can('administrator') ) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 // Remove thumbnail width and height dimensions that prevent fluid images in the_thumbnail

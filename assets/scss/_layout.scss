@@ -1,4 +1,5 @@
 
+
 header , footer , .middle-nav {
 	nav {
 		ul {
@@ -6,17 +7,133 @@ header , footer , .middle-nav {
 		}
 	}
 }
+header {
+
+	a {
+		padding: 10px 20px;
+		margin: 10px 5px;
+
+		color: _palette(bg);
+	}
+}
+
+footer{
+
+}
+
 .hero {
+	background-attachment: scroll, fixed, fixed;
+	background-image: url('../img/top-3200.svg'), url('../img/overlay.png'), url('../img/bg.jpg');
+	background-position: bottom center, center center, center center;
+	background-repeat: repeat-x, repeat, repeat-x;
+	background-size: 3200px 460px, auto, cover;
+	//min-height: 640px;
+
+	color: _palette(bg);
+	text-align: center;
 
 	.wrapper {
 		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
 
-		& > *{
+		margin: 0 auto;
+		padding: (_size(gutter)*1) (_size(gutter)/1) (_size(gutter)*5.5) (_size(gutter)/1);
+		max-width: _size(tablet);
 
-			@extend %flex-equal-width-col;
+		@include respond(_size(tablet)) {
+			padding-top: (_size(gutter)*2);
+			max-width: 800px;
+		}
+		@include respond(_size(mobile)) {
+			padding-bottom: (_size(gutter)*4);
+			flex-direction: column;
 		}
 	}
 	h1 {
 		font-weight: normal;
+		color: _palette(bg);
+		font-size: 3.2rem;
+		margin: 0;
+		font-weight: 300;
+
+		@include respond(_size(tablet)) {
+			font-size: 2.4rem;
+		}
+
+		@include respond(_size(mobile)) {
+			text-align: center;
+		}
+
+		strong {
+			font-size: 4rem;
+			color: inherit;
+			display: block;
+			font-weight: 400;
+
+			@include respond(_size(tablet)) {
+				font-size: 3.2rem;
+			}
+
+			@include respond(_size(mobile)) {
+				text-align: center;
+			}
+		}
 	}
+	.intro {
+		display: inline-block;
+		flex-basis: 68%;
+		width: 68%;
+		text-align: left;
+		margin-top: _size(gutter);
+		padding-right: _size(gutter);
+
+		@include respond(_size(tablet)) {
+			max-width: 480px;
+			margin-top: (_size(gutter)/2);
+		}
+
+		@include respond(_size(mobile)) {
+			flex-basis: 100%;
+			width: 100%;
+			padding-right: 0;
+			margin: 0 auto;
+		}
+
+		a {
+			opacity: 1;
+			transition: opacity _duration(short);
+
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
+	.photo {
+		display: inline-block;
+		flex-basis: 32%;
+		width: 32%;
+		min-width: 200px;
+
+		border-radius: 9999px;
+		border: 16px solid rgba(255,255,255,0.8);
+		overflow: hidden;
+
+		@include respond(_size(mobile)) {
+			flex-basis: 100%;
+			max-width: 66%;
+			margin: _size(gutter) auto 0 auto;
+		}
+	}
+}
+
+.contact{
+	background-attachment: scroll;
+	background-color: #4eb980;
+	background-image: url('../img/bottom-3200.svg');
+	background-position: top center;
+	background-repeat: repeat-x;
+	background-size: 3200px 460px;
+
+	min-height: 500px;
 }

@@ -8,7 +8,7 @@ $background 	= 	get_field('hp_hero_background', $id);
 if( !empty($background) ) {
 ?>
 	<style>
-		.hero{ background-image: url( <?= $background['url']; ?> ); }
+		.asdfasdf{ background-image: url( <?= $background['url']; ?> ); }
 	</style>
 
 	<section class="hero">

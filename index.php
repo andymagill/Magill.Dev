@@ -11,13 +11,15 @@
 
 	<main role="main">
 		<section class="post-loop">
-
 			<?php get_template_part('template-parts/loop'); ?>
 			<?php get_template_part('template-parts/pagination'); ?>
-
 		</section>
 		<!-- /section -->
 	</main>
 	<!-- /main -->
+	<section class="contact">
+		form goes here
+	</section>
+
 
 <?php get_footer(); ?>

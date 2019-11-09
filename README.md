@@ -9,7 +9,8 @@ This is custom WordPress Theme for Andrew Magill's Portfolio.
 
 ## Attribution :
 Theme based on [html5blank](http://html5blank.com/).  
-Some CSS from [html5up](http://html5up.com/).  
+Some design elements and CSS from [html5up](http://html5up.com/).
+Sunlit Road Photo by [@veeterzy](https://www.pexels.com/photo/road-landscape-nature-forest-39811/). 
 
 ## License :
 License: Creative Commons Attribution 3.0 CC  
