@@ -20,7 +20,7 @@ header {
 
 	.scrolled & {
 		height: 0;
-		margin-top: -100px;
+		margin-top: -50px;
 		opacity: 0;
 	}
 	.scrolled_hard & .nav {
@@ -42,7 +42,7 @@ header {
 			border-color: rgba(255, 255, 255, 0.45);
 
 			span {
-				font-size: 1.4rem;
+				//font-size: 1.4rem;
 			}
 		}
 
@@ -60,6 +60,16 @@ header {
 
 			@include respond(_size(mobile)) {
 				//font-size: 0;
+			}
+		}
+
+		&.icon{
+
+			// add font awesome
+
+
+			span{
+				display: none;
 			}
 		}
 	}
@@ -103,7 +113,6 @@ header {
 	}
 }
 
-
 .hero {
 	background-attachment: scroll, fixed, fixed;
 	background-image: url('../img/top-3200.svg'), url('../img/overlay.png'), url('../img/bg.jpg');
@@ -131,6 +140,7 @@ header {
 			max-width: 800px;
 		}
 		@include respond(_size(mobile)) {
+			padding: (_size(gutter)*2.5) (_size(gutter)/1) (_size(fluid-gutter)*5.5) (_size(gutter)/1);
 			flex-direction: column;
 		}
 	}
@@ -146,9 +156,9 @@ header {
 		}
 		@include respond(_size(mobile)) {
 			text-align: center;
+			font-size: 2rem;
 		}
 		@include respond(_size(tiny)) {
-			font-size: 2.2rem;
 		}
 
 		strong {
@@ -162,6 +172,7 @@ header {
 				font-size: 3.2rem;
 			}
 			@include respond(_size(mobile)) {
+				font-size: 2.8rem;
 				text-align: center;
 			}
 		}
@@ -224,13 +235,30 @@ header {
 	}
 }
 
+
+.main{
+}
+
+
 .contact{
 	background-attachment: scroll;
-	background-color: #4eb980;
+	background-color: _palette(btm_bg);
 	background-image: url('../img/bottom-3200.svg');
 	background-position: top center;
 	background-repeat: repeat-x;
 	background-size: 3200px 460px;
+	padding-top: 460px;
 
 	min-height: 500px;
+}
+
+.footer {
+	background-color: _palette(btm_bg);
+}
+
+.wpforms-container {
+
+	max-width: 640px;
+	padding: _size(gutter) (_size(gutter)/2) !important;
+	margin: 0 auto !important;
 }

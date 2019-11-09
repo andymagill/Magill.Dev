@@ -9,7 +9,7 @@
 		<?php magillDev()->render_menus('middle-menu'); ?>
 	</section>
 
-	<main role="main">
+	<main class="main" role="main">
 		<section class="post-loop">
 			<?php get_template_part('template-parts/loop'); ?>
 			<?php get_template_part('template-parts/pagination'); ?>
@@ -17,9 +17,11 @@
 		<!-- /section -->
 	</main>
 	<!-- /main -->
+
 	<section class="contact">
-		form goes here
+		<?= do_shortcode('[wpforms id="26" title="false" description="false"]'); ?>
 	</section>
+	<!-- /contact -->
 
 
 <?php get_footer(); ?>
