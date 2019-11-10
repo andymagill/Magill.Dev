@@ -45,22 +45,11 @@ class magillDev {
 		// If Dynamic Sidebar Exists
 		if (function_exists('register_sidebar'))
 		{
-			// Define Sidebar Widget Area 1
+			// Define Sidebar Widget Area
 			register_sidebar(array(
-				'name' => __('Widget Area 1', $theme),
+				'name' => __('Sidebar', $theme),
 				'description' => __('Description for this widget-area...', $theme),
-				'id' => 'widget-area-1',
-				'before_widget' => '<div id="%1$s" class="%2$s">',
-				'after_widget' => '</div>',
-				'before_title' => '<h3>',
-				'after_title' => '</h3>'
-			));
-
-			// Define Sidebar Widget Area 2
-			register_sidebar(array(
-				'name' => __('Widget Area 2', $theme),
-				'description' => __('Description for this widget-area...', $theme),
-				'id' => 'widget-area-2',
+				'id' => 'sidebar',
 				'before_widget' => '<div id="%1$s" class="%2$s">',
 				'after_widget' => '</div>',
 				'before_title' => '<h3>',
@@ -87,7 +76,7 @@ class magillDev {
 		else {
 
 			// main js file
-			wp_register_script('theme-scripts', get_theme_file_uri() . '/assets/js/scripts.js', array('jquery'), '0.01');
+			wp_register_script('theme-scripts', get_theme_file_uri() . '/assets/js/scripts.min.js', array('jquery'), '0.01');
 			wp_enqueue_script('theme-scripts');
 
 			// jquery
