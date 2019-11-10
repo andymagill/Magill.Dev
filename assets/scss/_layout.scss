@@ -150,15 +150,21 @@
 	min-height: 500px;
 
 	.email_text {
-		//padding: (_size(gutter)/1)(_size(gutter)*2) ;
 		color: rgba(white, 0.7);
 		font-size: 2.4rem;
 		line-height: 2em;
 
+		@include respond(_size(tablet)) {
+			//font-size: 2rem;
+		}
 		h2 {
 			color: rgba(white, 0.7);
 			font-size: 3.2rem;
 		}
+	}
+	.row {
+		max-width: 1280px;
+		margin: 0 auto;
 	}
 	.col_inner {
 		margin: _size(gutter) auto;
@@ -183,13 +189,14 @@ div.wpforms-container {
 			letter-spacing: 0.075em !important;
 			padding: (_size(gutter)/3) (_size(gutter)/2) !important;
 			border: 2px solid rgba(white, 0.7) !important;
+			outline: 2px solid transparent;
 			box-shadow: 0 0 0 0 transparent inset !important;
 
 			color: white !important;
 			font-weight: 500;
 
 			background: rgba(#FFF, 0.15)!important;
-			transition: box-shadow _duration(short), background _duration(long), outline-offset _duration(short), outline-color _duration(short);
+			transition: box-shadow _duration(short), background _duration(long), outline-offset _duration(short), outline _duration(short);
 
 			&:hover {
 				outline-offset: 2px;
@@ -233,7 +240,7 @@ div.wpforms-container {
 			font-weight: bold;
 			border: 0 !important;
 
-			transition: background _duration(long),  outline-offset _duration(short), outline-color _duration(short);
+			transition: background _duration(long),  outline-offset _duration(short), outline _duration(long);
 
 			&:hover {
 				background: white;
@@ -244,5 +251,10 @@ div.wpforms-container {
 				outline-offset: 3px;
 			}
 		}
+
+		.wpforms-field {
+			overflow: visible !important;
+		}
 	}
 }
+
