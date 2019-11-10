@@ -30,7 +30,7 @@
 		-->
 
 		<div class="page">
-			<header class="header clear" role="banner">
+			<header class="header primary_nav clear" role="banner">
 				<?php magillDev()->render_menus('header-menu'); ?>
 			</header>
 			<!-- /header -->

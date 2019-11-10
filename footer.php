@@ -1,5 +1,5 @@
 
-			<footer class="footer" role="contentinfo">
+			<footer class="footer primary_nav" role="contentinfo">
 
 				<?php magillDev()->render_menus('footer-menu'); ?>
 

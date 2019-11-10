@@ -107,6 +107,7 @@ hr {
 
 	font-size: 1.3rem;
 	color: _palette(bg);
+	letter-spacing: 0.05em;
 	text-align: center;
 
 	a {
@@ -114,8 +115,7 @@ hr {
 		transition: opacity _duration(short);
 
 		&:hover {
-			opacity: 0.7
-
+			opacity: 0.7;
 		}
 	}
 }

@@ -9,9 +9,16 @@
 	</section>
 
 	<main class="main" role="main">
+		<section class="frontpage content">
+			<div class="wrapper">
+				<?php the_content(); ?>
+			</div>
+		</section>
+
 		<section class="post-loop">
-			<?php get_template_part('template-parts/loop'); ?>
-			<?php get_template_part('template-parts/pagination'); ?>
+			<div class="wrapper">
+				<?php get_template_part('template-parts/project-loop'); ?>
+			</div>
 		</section>
 		<!-- /section -->
 	</main>

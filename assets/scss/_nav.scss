@@ -1,0 +1,125 @@
+
+
+header , footer , .middle-nav {
+	nav {
+		ul {
+			@extend %nota-list;
+		}
+	}
+}
+header {
+	position: fixed;
+	height: 94px;
+
+	transition: margin-top _duration(moderate) , opacity _duration(long);
+
+	.scrolled & {
+		height: 0;
+		margin-top: -50px;
+		opacity: 0;
+	}
+
+	.scrolled_hard  & .nav {
+		opacity: 0;
+	}
+}
+
+.primary_nav {
+
+	text-align: center;
+	width: 100%;
+
+	nav {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		padding: 1.5em 0 1.5em 0;
+		z-index: 1;
+		overflow: hidden;
+
+		& > ul {
+			position: relative;
+			display: inline-block;
+			padding: 0 (_size(gutter)/2);
+			margin: 0;
+			line-height: 0px;
+
+			&::before, &::after {
+				content: '';
+				display: block;
+				width: 300%;
+				position: absolute;
+				top: 50%;
+				margin-top: -4px;
+				height: 8px;
+				border-top: solid 2px rgba(255, 255, 255, 0.45);
+				border-bottom: solid 2px rgba(255, 255, 255, 0.45);
+			}
+			&::before {
+				left: 100%;
+				margin-left: 1px;
+			}
+			&::after {
+				right: 100%;
+				margin-right: 1px;
+			}
+		}
+		a {
+			padding: 15px (_size(gutter)/3);
+			margin: 2px;
+			display: inline-block;
+
+			color: _palette(bg);
+			text-decoration: none;
+			border: 7px double transparent;
+
+			transition: border-color _duration(moderate), padding _duration(short);
+
+			&:hover {
+				border-color: rgba(255, 255, 255, 0.45);
+				padding: 15px (_size(gutter)/2);
+
+				span {
+					//font-size: 1.4rem;
+				}
+			}
+
+			@include respond(_size(tablet)) {
+				padding: 15px 2vw;
+			}
+
+			@include respond(_size(mobile)) {
+				padding: 15px 1vw;
+			}
+
+			span{
+				font-size: inherit;
+				transition: font-size _duration(moderate);
+
+				@include respond(_size(mobile)) {
+					//font-size: 0;
+				}
+			}
+
+			&.icon{
+
+				// add font awesome
+
+
+				span{
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+.footer {
+	background-color: _palette(btm_bg);
+	padding-top: (_size(gutter)*1)
+}

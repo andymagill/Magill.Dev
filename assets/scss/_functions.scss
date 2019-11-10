@@ -53,9 +53,10 @@
 }
 
 
-
-/*!---  MIXINS  ---*/
-
+// mixins ///////////////////////
 @mixin respond($size) {
-	@media screen and (max-width: $size) { @content; }
+  @media screen and (max-width: $size) { @content; }
+}
+@mixin respond_up($size) {
+  @media screen and (min-width: $size) { @content; }
 }
