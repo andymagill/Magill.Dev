@@ -2,7 +2,7 @@
 <aside class="sidebar" role="complementary">
 
 	<?php
-		magillDev()->render_menus('sidebar-menu');
+		magillDev()->render_menus('sidebar-menu', 'side_nav');
 
 		get_template_part('searchform');
 	?>

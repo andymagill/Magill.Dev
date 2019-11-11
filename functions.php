@@ -120,11 +120,11 @@ class magillDev {
 	\*------------------------------------*/
 
 	// Render menu markup
-	function render_menus($menu) {
+	function render_menus($menu, $class) {
 
 		if ( has_nav_menu($menu) ) {
 		?>
-			<nav class="nav" role="navigation">
+			<nav class="nav <?= $class; ?>" role="navigation">
 				<?php wp_nav_menu(
 					array(
 						'theme_location'  => $menu ,

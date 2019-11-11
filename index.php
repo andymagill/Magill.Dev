@@ -4,23 +4,30 @@
 
 	get_template_part('template-parts/hero');
 ?>
-	<section class="middle-nav">
-		<?php magillDev()->render_menus('middle-menu'); ?>
-	</section>
+	<?php magillDev()->render_menus('middle-menu', 'middle-nav primary_nav'); ?>
 
 	<main class="main" role="main">
-		<section class="frontpage content">
+
+		<section class="frontpage_content">
 			<div class="wrapper">
 				<?php the_content(); ?>
 			</div>
 		</section>
+		<!-- /frontpage_content -->
 
-		<section class="post-loop">
+		<section class="post_loop">
+			<div class="wrapper">
+				<?php //get_template_part('template-parts/loop'); ?>
+			</div>
+		</section>
+		<!-- /project_loop -->
+
+		<section class="project_loop">
 			<div class="wrapper">
 				<?php get_template_part('template-parts/project-loop'); ?>
 			</div>
 		</section>
-		<!-- /section -->
+		<!-- /project_loop -->
 	</main>
 	<!-- /main -->
 

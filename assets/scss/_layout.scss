@@ -171,6 +171,51 @@
 		max-width: 75%;
 	}
 }
+.projects {
+	width: 100%;
+
+	padding: _size(gutter) _size(gutter);
+
+	.wrapper {
+		max-width: 1280px;
+		margin: 0 auto;
+	}
+
+	ul {
+		@extend %nota-list;
+		display: flex;
+	}
+	li {
+		position: relative;
+
+		flex-basis: 33.33%;
+		// margin: calc(33.33%-(_size(gutter)/2));
+
+		a {
+			display: block;
+			margin: 0 (_size(gutter)/4);
+		}
+		img {
+			width: 100%;
+		}
+
+		.overlay {
+			position: absolute;
+
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+
+			color: white;
+			text-align: center;
+		}
+
+		.project_content {
+			display: none;
+		}
+	}
+}
 
 div.wpforms-container {
 
@@ -181,7 +226,6 @@ div.wpforms-container {
 	form.wpforms-form {
 
 		input , select, textarea {
-
 
 			height: auto !important;
 			letter-spacing: 1em;
@@ -219,7 +263,7 @@ div.wpforms-container {
 			}
 
 			&:focus {
-				//border-color: #f6f4d0 !important;
+				background: rgba(#FFF, 0.3)!important;
 				outline: 2px solid rgba(white, 0.7);
 				outline-offset: -6px;
 			}
@@ -258,3 +302,12 @@ div.wpforms-container {
 	}
 }
 
+div.wpforms-confirmation-container-full {
+	padding: (_size(gutter)/2) (_size(gutter)*1) !important;
+	background: rgba(#FFF, 0.3) !important;
+	border: 0 transparent !important;
+	outline: 2px solid rgba(#FFF, 0.7) !important;
+	outline-offset: -4px;
+	font-weight: bold;
+	color: white;
+}

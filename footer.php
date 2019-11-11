@@ -1,7 +1,7 @@
 
-			<footer class="footer primary_nav" role="contentinfo">
+			<footer class="footer" role="contentinfo">
 
-				<?php magillDev()->render_menus('footer-menu'); ?>
+				<?php magillDev()->render_menus('footer-menu', 'footer_nav'); ?>
 
 				<p class="copyright">
 					Licensed under the <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution license</a>.
