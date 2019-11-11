@@ -13,34 +13,42 @@ if( $projects ): ?>
 
 				setup_postdata($project);
 				$title 		= get_the_title($project->ID);
-				$thumb 		= get_the_post_thumbnail($project->ID, 'medium');
 				$excerpt 	= get_the_excerpt($project->ID);
-				$tags 		= get_the_tags($project->ID);
-				$str_tags 	= '';
 
-				foreach ($tags as $tag) {
-				  $str_tags .= $tag->slug.' ';
-				}
+				$content 	= $project->post_content;
+				$content 	= apply_filters('the_content', $content);
+				$content 	= str_replace(']]>', ']]&gt;', $content);
+
+				$thumb 		= get_the_post_thumbnail($project->ID, 'medium');
+				$tags 		= get_the_tags($project->ID);
+				$classes 	= implode(" ",get_post_class('', $project->ID));
 
 				?>
-				<li id="project-<?= $project->ID; ?>" <?php post_class($str_tags); ?>>
+				<li id="project-<?= $project->ID; ?>" class="<?= $classes; ?>">
 
 					<?php if ( $project->ID ) : ?>
-						<a href="#project-<?= $project->ID; ?>" title="<?= $title; ?>">
+						<div class="project_inner">
 							<?= $thumb; // Declare pixel size you need inside the array ?>
 							<span class="overlay">
 								<span class="project_title"><?= $title; ?></span>
 								<span class="project_excerpt"><?= $excerpt; ?></span>
-								<span class="project_content"><?php the_content(); ?></span>
-								<span class="project_tags">
-									<ul>
-									<?php
-									foreach ($tags as $tag) {
-										echo '<li class="'.$tag->slug.'">' . $tag->name . '</li>';
-									}
-									?>
-									</ul>
-								</span>
+								<span class="project_content"><?= $content; ?></span>
+
+								<?php
+								if ( is_array($tags) ) {
+								?>
+									<span class="project_tags">
+										<ul>
+										<?php
+											foreach ($tags as $tag) {
+											echo '<li class="'.$tag->slug.'">' . $tag->name . '</li>';
+										}
+										?>
+										</ul>
+									</span>
+								<?php
+								}
+								?>
 							</span>
 						</a>
 					<?php endif; ?>

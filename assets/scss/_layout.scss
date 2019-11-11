@@ -168,12 +168,14 @@
 					flex-basis: 100%;
 					margin-bottom: 20%;
 				}
-				a {
+				.project_inner {
 					display: block;
 					position: relative;
 					margin: 0 5%;
 					border-radius: 5px;
+					min-height: 280px;
 					overflow: hidden;
+					background: #bfcfda;
 
 					@include respond(680px) {
 						margin: 0 10%;
@@ -181,6 +183,15 @@
 
 					@include respond(_size(tiny)) {
 						margin: 0;
+					}
+
+					&:hover {
+						.project_excerpt {
+							display: block;
+							max-height: 140px;
+
+							opacity: 1;
+						}
 					}
 				}
 				img {
@@ -209,18 +220,10 @@
 		& > span{
 			//padding: 0 _size(gutter);
 		}
-		.project_title {
-			font-size: 2.4rem;
-			font-family: _font(heading);
-		}
-		&:hover {
-			.project_excerpt {
-				display: block;
-				max-height: 140px;
-
-				opacity: 1;
-			}
-		}
+	}
+	.project_title {
+		font-size: 2.6rem;
+		font-family: _font(heading);
 	}
 	.project_content {
 		display: none;
@@ -230,8 +233,12 @@
 		display: block;
 		max-height: 0;
 		margin-top: 5%;
+
 		overflow: hidden;
 		opacity: 0;
+
+		font-weight: 200;
+		font-size: 2rem;
 
 		transition: opacity _duration(short), max-height _duration(moderate);
 	}
