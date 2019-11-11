@@ -22,11 +22,7 @@
 		</section>
 		<!-- /project_loop -->
 
-		<section class="project_loop">
-			<div class="wrapper">
-				<?php get_template_part('template-parts/project-loop'); ?>
-			</div>
-		</section>
+		<?php get_template_part('template-parts/project-loop'); ?>
 		<!-- /project_loop -->
 	</main>
 	<!-- /main -->

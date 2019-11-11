@@ -105,7 +105,7 @@ class magillDev {
 	// Load styles
 	function enqueue_styles()
 	{
-		wp_register_style('theme-styles', get_theme_file_uri() . '/assets/css/styles.css', array(), '0.01', 'all');
+		wp_register_style('theme-styles', get_theme_file_uri() . '/assets/css/styles.css', array(), '0.011', 'all');
 		wp_enqueue_style('theme-styles');
 	}
 
@@ -172,7 +172,7 @@ if (function_exists('add_theme_support'))
 	// Add Thumbnail Theme Support
 	add_theme_support('post-thumbnails');
 	add_image_size('large', 700, '', true); // Large Thumbnail
-	add_image_size('medium', 250, '', true); // Medium Thumbnail
+	add_image_size('medium', 325, '', true); // Medium Thumbnail
 	add_image_size('small', 120, '', true); // Small Thumbnail
 	add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
