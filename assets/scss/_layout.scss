@@ -141,7 +141,11 @@
 .projects {
 	width: 100%;
 
-	padding: _size(gutter) _size(gutter);
+	padding: _size(gutter);
+
+	@include respond(_size(mobile)) {
+		padding: (_size(gutter)/2);
+	}
 
 	.wrapper {
 		max-width: 1280px;
@@ -161,6 +165,19 @@
 				// margin: calc(33.33%-(_size(gutter)/2));
 				margin-bottom: 5%;
 
+				span.overlay {
+					//position: absolute;
+					background: rgba(#333, 0.65);
+					box-shadow: 0 0 60px -10px #333 inset;
+
+					transition: box-shadow _duration(moderate);
+				}
+				&:hover {
+					span.overlay {
+						box-shadow: 0 0 120px 60px #1e2e3b inset;
+					}
+				}
+
 				@include respond(_size(tablet)) {
 					flex-basis: 50%;
 				}
@@ -177,6 +194,8 @@
 					overflow: hidden;
 					background: #bfcfda;
 
+					padding-bottom: 40px;
+
 					@include respond(680px) {
 						margin: 0 10%;
 					}
@@ -188,7 +207,7 @@
 					&:hover {
 						.project_excerpt {
 							display: block;
-							max-height: 140px;
+							max-height: 120px;
 
 							opacity: 1;
 						}
@@ -201,9 +220,16 @@
 			}
 		}
 	}
+	li.has-post-thumbnail {
+
+		& > div.project_inner {
+			min-height: 0;
+			padding-bottom: 0;
+		}
+	}
 	.overlay {
-		position: absolute;
 		display: flex;
+		position: absolute;
 		justify-content: center;
 		align-content: center;
 		flex-direction: column;
@@ -220,10 +246,18 @@
 		& > span{
 			//padding: 0 _size(gutter);
 		}
+		@include respond(1200px) {
+			padding: 0 5%;
+		}
+		@include respond(_size(tablet)) {
+			padding: 0 10%;
+		}
 	}
 	.project_title {
 		font-size: 2.6rem;
 		font-family: _font(heading);
+		max-height: 70px;
+		overflow: hidden;
 	}
 	.project_content {
 		display: none;
@@ -242,6 +276,9 @@
 
 		transition: opacity _duration(short), max-height _duration(moderate);
 	}
+	.project_tag_label {
+		display: none;
+	}
 	.project_tags {
 		position: absolute;
 
@@ -253,7 +290,7 @@
 			@extend %nota-list;
 		}
 
-		li {
+		a {
 			padding: 3px 7px;
 			background: rgba(255,255,255,0.7);
 			border-radius: 3px;
@@ -262,6 +299,8 @@
 
 			color: _palette(fg);
 			text-transform: uppercase;
+			text-decoration: none;
+			pointer-events: none;
 		}
 	}
 }
@@ -358,7 +397,7 @@ div.wpforms-container {
 			}
 
 			&:focus {
-				background: rgba(#FFF, 0.3)!important;
+				background: rgba(#FFF, 0.4)!important;
 				outline: 2px solid rgba(white, 0.7);
 				outline-offset: -6px;
 			}

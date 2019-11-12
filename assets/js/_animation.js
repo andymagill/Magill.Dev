@@ -32,6 +32,13 @@
 			}
 		}
 
+		// handlers
+
+		$('.projects li').click(function(e){
+			var id = $(this).attr('id');
+
+		})
+
 	});
 
 })(jQuery, this);

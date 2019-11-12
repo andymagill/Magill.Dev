@@ -19,7 +19,7 @@ if( $projects ): ?>
 				$content 	= apply_filters('the_content', $content);
 				$content 	= str_replace(']]>', ']]&gt;', $content);
 
-				$thumb 		= get_the_post_thumbnail($project->ID, 'medium');
+				$thumb 		= get_the_post_thumbnail($project->ID);
 				$tags 		= get_the_tags($project->ID);
 				$classes 	= implode(" ",get_post_class('', $project->ID));
 
@@ -38,10 +38,11 @@ if( $projects ): ?>
 								if ( is_array($tags) ) {
 								?>
 									<span class="project_tags">
+										<span class="project_tag_label"><?php _e( 'Powered by : ' ); ?></span>
 										<ul>
 										<?php
 											foreach ($tags as $tag) {
-											echo '<li class="'.$tag->slug.'">' . $tag->name . '</li>';
+											echo '<li><a href="#'.$tag->slug.'">' . $tag->name . '</a></li>';
 										}
 										?>
 										</ul>
