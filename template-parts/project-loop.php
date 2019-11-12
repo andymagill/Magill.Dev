@@ -2,11 +2,16 @@
 
 
 $projects = get_field('projects');
+$default_thumbnails = get_field('default_thumbnails');
+//$thb_count = count($default_thumbnails);
 
 if( $projects ): ?>
 
 	<section class="projects">
 		<div class="wrapper">
+
+			<h2><?php _e( 'PROJECTS' ); ?></h2>
+
 			<ul>
 
 			<?php foreach( $projects as $project): // variable must be called $project (IMPORTANT)
@@ -23,12 +28,18 @@ if( $projects ): ?>
 				$tags 		= get_the_tags($project->ID);
 				$classes 	= implode(" ",get_post_class('', $project->ID));
 
+				//
+				if ( !$thumb ) {
+					$default_thumb_id = $project->ID % count($default_thumbnails);
+					$thumb = wp_get_attachment_image($default_thumbnails[$default_thumb_id]);
+				}
+
 				?>
 				<li id="project-<?= $project->ID; ?>" class="<?= $classes; ?>">
 
 					<?php if ( $project->ID ) : ?>
 						<div class="project_inner">
-							<?= $thumb; // Declare pixel size you need inside the array ?>
+							<?= $thumb; ?>
 							<span class="overlay">
 								<span class="project_title"><?= $title; ?></span>
 								<span class="project_excerpt"><?= $excerpt; ?></span>

@@ -167,17 +167,14 @@
 
 				span.overlay {
 					//position: absolute;
-					background: rgba(#333, 0.65);
 					box-shadow: 0 0 60px -10px #333 inset;
 
 					transition: box-shadow _duration(moderate);
-				}
-				&:hover {
-					span.overlay {
+
+					&:hover {
 						box-shadow: 0 0 120px 60px #1e2e3b inset;
 					}
 				}
-
 				@include respond(_size(tablet)) {
 					flex-basis: 50%;
 				}
@@ -194,7 +191,7 @@
 					overflow: hidden;
 					background: #bfcfda;
 
-					padding-bottom: 40px;
+					//padding-bottom: 40px;
 
 					@include respond(680px) {
 						margin: 0 10%;
@@ -221,6 +218,9 @@
 		}
 	}
 	li.has-post-thumbnail {
+		span.overlay {
+			background: rgba(#333, 0.65);
+		}
 
 		& > div.project_inner {
 			min-height: 0;
@@ -303,6 +303,12 @@
 			pointer-events: none;
 		}
 	}
+	h2 {
+		font-family: _font(heading);
+		font-size: 3.6rem;
+		color: #54758e;
+		text-align: center;
+	}
 }
 
 .contact{
@@ -328,6 +334,7 @@
 		h2 {
 			color: rgba(white, 0.7);
 			font-size: 3.2rem;
+			font-family: _font(heading);
 
 			@include respond(_size(tiny)) {
 				font-size: 2.4rem;
