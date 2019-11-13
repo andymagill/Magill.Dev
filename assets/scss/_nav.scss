@@ -77,32 +77,30 @@ header {
 			span {
 				//font-size: 1.4rem;
 			}
+			@include respond(_size(tiny)) {
+				border: 0 none;
+				padding: 0;
+				border-radius: 0;
+			}
+		}
+		&:active {
+			background: rgba(0, 0, 0, 0.25);
 		}
 
 		@include respond(_size(tablet)) {
 			padding: 15px 2vw;
 		}
-
 		@include respond(_size(mobile)) {
 			padding: 15px 1vw;
 		}
-
-		span{
-			font-size: inherit;
-			transition: font-size _duration(moderate);
-
-			@include respond(_size(mobile)) {
-				//font-size: 0;
-			}
+		@include respond(_size(tiny)) {
+			border: 0 none;
+			padding: 0;
+			border-radius: 99px;
 		}
-
-		&.icon{
-
-			// add font awesome
-
-
-			span{
-				display: none;
+		span{
+			@include respond(_size(tiny)) {
+				font-size: 0;
 			}
 		}
 	}

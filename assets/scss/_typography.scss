@@ -126,3 +126,32 @@ hr {
 		//font-size: 2.2rem;
 	}
 }
+.icon a::before {
+	display: none;
+	height: 30px;
+	width: 30px;
+	line-height: 1.8;
+	font-family: _font(fab);
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+
+	@include respond(_size(tiny)) {
+		display: inline-block;
+	}
+}
+.linkedin a::before {
+	content: "\f0e1";
+}
+.github a::before {
+	content: "\f09b";
+}
+.behance a::before {
+	content: "\f1b4";
+}
+.resume a::before {
+	font-family: _font(fas);
+	font-weight: 900;
+	content: "\f15b";
+}
