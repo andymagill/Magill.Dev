@@ -7,9 +7,9 @@
 			<!-- article -->
 			<article id="post-404">
 
-				<h1><?php _e( 'Page not found', 'magillDev' ); ?></h1>
+				<h1><?php _e( '¯\_(ツ)_/¯ Oh no, page not found!', 'magillDev' ); ?></h1>
 				<h2>
-					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'magillDev' ); ?></a>
+					<a href="<?php echo home_url(); ?>"><?php _e( 'Return to Homepage', 'magillDev' ); ?></a>
 				</h2>
 
 			</article>
@@ -18,7 +18,5 @@
 		</section>
 		<!-- /section -->
 	</main>
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

@@ -3,7 +3,6 @@
 
 $projects = get_field('projects');
 $default_thumbnails = get_field('default_thumbnails');
-//$thb_count = count($default_thumbnails);
 
 if( $projects ): ?>
 
@@ -14,7 +13,7 @@ if( $projects ): ?>
 
 			<ul>
 
-			<?php foreach( $projects as $project): // variable must be called $project (IMPORTANT)
+			<?php foreach( $projects as $project):
 
 				setup_postdata($project);
 				$title 		= get_the_title($project->ID);
@@ -72,7 +71,7 @@ if( $projects ): ?>
 		</div>
 	</section>
 
-	<?php wp_reset_postdata(); // IMPORTANT - reset the $project object so the rest of the page works correctly ?>
-<?php endif;
+	<?php wp_reset_postdata();
+endif;
 
 ?>

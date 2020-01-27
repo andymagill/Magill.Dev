@@ -24,7 +24,7 @@
 		// functions
 		function toggle_topnav() {
 
-			if ( $(document).scrollTop() > 40 ) {
+			if ( $(document).scrollTop() > 20 ) {
 				$('body').addClass('scrolled');
 			}
 			else  {
@@ -36,6 +36,8 @@
 
 		$('.projects li').click(function(e){
 			var id = $(this).attr('id');
+
+			// TODO: add modal classes
 
 		})
 
