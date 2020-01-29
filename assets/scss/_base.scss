@@ -199,7 +199,7 @@ a img.aligncenter {
 	margin: _size(gutter) 0;
 
 	background: _palette(btm_bg);
-	border: 3px solid _palette(btm_bg);
+	border: 7px double _palette(btm_bg);
 	color: white;
 
 	&:hover{

@@ -2,17 +2,18 @@
 // Size
 	$size: (
 		site-width: 1440px,
-		gutter: 40px,
-		fluid-gutter: 4vw,
-		border: 1px,
+		desktop: 1280px,
 		tablet: 1024px,
 		mobile: 768px,
 		tiny: 480px,
+		gutter: 40px,
+		fluid-gutter: 4vw,
+		border: 1px,
 	);
 
 // Font
 	$font: (
-		body:			('Merriweather Sans', sans-serif),
+		body:			('Poppins', sans-serif),
 		heading:		('Merriweather', serif),
 		fas:			('Font Awesome 5 Free'),
 		fab:			('Font Awesome 5 Brands'),
