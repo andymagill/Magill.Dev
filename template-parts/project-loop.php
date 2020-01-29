@@ -70,7 +70,7 @@ if( $projects ): ?>
 			</ul>
 		</div>
 	</section>
-
+ 	<!-- /projects -->
 	<?php wp_reset_postdata();
 endif;
 

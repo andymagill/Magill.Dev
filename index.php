@@ -3,27 +3,28 @@
 	get_header();
 
 	get_template_part('template-parts/hero');
-?>
-	<?php magillDev()->render_menus('middle-menu', 'middle-nav primary_nav'); ?>
+
+	magillDev()->render_menus('middle-menu', 'middle_nav'); ?>
 
 	<main class="main" role="main">
 
-		<section class="frontpage_content">
-			<div class="wrapper">
-				<?php the_content(); ?>
-			</div>
-		</section>
-		<!-- /frontpage_content -->
+		<?php
+		if ( have_posts() ) : ?>
+			<section class="frontpage_content">
+				<div class="wrapper">
+					<?php
+					while ( have_posts() ) : the_post();
+						the_content();
+					endwhile;
+					?>
+				</div>
+			</section>
+			<!-- /frontpage_content -->
+			<?php
+		endif;
 
-		<section class="post_loop">
-			<div class="wrapper">
-				<?php //get_template_part('template-parts/loop'); ?>
-			</div>
-		</section>
-		<!-- /project_loop -->
+		get_template_part('template-parts/project-loop'); ?>
 
-		<?php get_template_part('template-parts/project-loop'); ?>
-		<!-- /project_loop -->
 	</main>
 	<!-- /main -->
 
@@ -32,6 +33,7 @@
 			<div class="col email_text">
 				<div class="col_inner">
 					<h2>Interested in working together?</h2>
+
 					<p>Are you one of those strange people that loves to talk about work?  What a coincidence, me too! I would love to hear from you so lets start a discussion.</p>
 				</div>
 			</div>

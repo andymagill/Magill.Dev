@@ -144,6 +144,18 @@ a img.aligncenter {
 
 //helper classes
 
+%clear {
+    *zoom:1;
+
+	&:before,
+	&:after {
+	    content:' ';
+	    display:table;
+	}
+	&:after {
+	    clear:both;
+	}
+}
 %nota-list {
 	margin: 0;
 	padding: 0;
@@ -181,15 +193,17 @@ a img.aligncenter {
 	transition: background _duration(short), color _duration(short);
 }
 
-.white_btn {
+.btn {
 
 	@extend %btn;
-	background: white;
-	color: _palette(link);
-	border: 1px solid white;
+	margin: _size(gutter) 0;
+
+	background: _palette(btm_bg);
+	border: 3px solid _palette(btm_bg);
+	color: white;
 
 	&:hover{
 		background: transparent;
-		color: white;
+		color: _palette(btm_bg);
 	}
 }

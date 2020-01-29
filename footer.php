@@ -26,7 +26,6 @@
 		  gtag('config', 'UA-152031759-1');
 		</script>
 
-
 		<!--
 			Answer : A Window
 		-->

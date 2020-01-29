@@ -1,12 +1,4 @@
 
-header , footer , .middle-nav {
-	nav {
-		ul {
-			@extend %nota-list;
-		}
-	}
-}
-
 header {
 	position: fixed;
 	height: 94px;
@@ -28,7 +20,7 @@ header {
 	left: 0;
 	width: 100%;
 	text-align: center;
-	padding: 1.5em 0 1.5em 0;
+	padding: _size(gutter) 0;
 	z-index: 1;
 	overflow: hidden;
 
@@ -38,6 +30,8 @@ header {
 		padding: 0 (_size(gutter)/2);
 		margin: 0;
 		line-height: 0px;
+
+		@extend %nota-list;
 
 		&::before, &::after {
 			content: '';
@@ -107,22 +101,23 @@ header {
 }
 
 
-.middle-nav {
-	nav {
-		a {
-			color: _palette(fg);
+.middle_nav , body:not(.frontpage) .primary_nav {
 
-			&:hover {
-				border-color: rgba(_palette(fg), 0.45);
-			}
+	padding: (_size(gutter)/2) 0;
+
+	a {
+		color: _palette(fg);
+
+		&:hover {
+			border-color: rgba(_palette(fg), 0.45);
 		}
+	}
 
-		& > ul {
+	& > ul {
 
-			&::before, &::after {
-				border-top: solid 2px rgba(_palette(fg), 0.45);
-				border-bottom: solid 2px rgba(_palette(fg), 0.45);
-			}
+		&::before, &::after {
+			border-top: solid 2px rgba(_palette(fg), 0.45);
+			border-bottom: solid 2px rgba(_palette(fg), 0.45);
 		}
 	}
 }

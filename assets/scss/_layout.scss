@@ -1,5 +1,5 @@
 .page {
-
+	min-height: 100vh;
 }
 .hero {
 	background-attachment: scroll, fixed, fixed;
@@ -34,6 +34,8 @@
 			flex-direction: column;
 		}
 	}
+
+
 	h1 {
 		font-weight: normal;
 		color: _palette(bg);
@@ -124,8 +126,13 @@
 	}
 }
 
+main{
+	min-height: calc(100vh - 255px);
+	text-align: center;
 
-.main{
+	header + & {
+		padding-top: 128px;
+	}
 }
 
 .row {
@@ -138,6 +145,17 @@
 		@extend %flex-equal-width-col;
 	}
 }
+.frontpage_content {
+	width: 100%;
+	margin: _size(gutter) 0;
+
+	@extend %clear;
+
+	.wrapper {
+		max-width: _size(site-width);
+		margin: 0 auto;
+	}
+}
 .projects {
 	width: 100%;
 
@@ -148,7 +166,7 @@
 	}
 
 	.wrapper {
-		max-width: 1280px;
+		max-width: _size(site-width);
 		margin: 0 auto;
 		align-items: center;
 
@@ -357,7 +375,6 @@
 }
 
 
-
 div.wpforms-container {
 
 	max-width: 640px;
@@ -436,13 +453,11 @@ div.wpforms-container {
 				outline-offset: 3px;
 			}
 		}
-
 		.wpforms-field {
 			overflow: visible !important;
 		}
 	}
 }
-
 div.wpforms-confirmation-container-full {
 	padding: (_size(gutter)/2) (_size(gutter)*1) !important;
 	background: rgba(#FFF, 0.3) !important;
