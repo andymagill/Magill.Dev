@@ -10,6 +10,7 @@
 
 		// Pageload
 		toggle_topnav();
+		setParallaxScroll()
 
 
 		// scroll handler
@@ -18,6 +19,7 @@
 			var scrolltimer = setTimeout(function (){
 
 				toggle_topnav();
+				setParallaxScroll();
 			}, 50)
 		});
 
@@ -30,6 +32,36 @@
 			else  {
 				$('body').removeClass('scrolled');
 			}
+			if ( $(document).scrollTop() > ($('.hero').outerHeight()/2) ) {
+				$('body').addClass('scrolled_half_hero');
+			}
+			else  {
+				$('body').removeClass('scrolled_half_hero');
+			}
+			if ( $(document).scrollTop() > (($('.contact').offset().top - $('.contact').height())+$('.footer').height()) ) {
+				$('body').addClass('scrolled_footer');
+			}
+			else  {
+				$('body').removeClass('scrolled_footer');
+			}
+		}
+
+		function setParallaxScroll() {
+
+			$('[data-parallax-multiplier]:visible').each( function() {
+
+				var scrolled = $(window).scrollTop();
+				var initY = $(this).offset().top;
+				//var height = $(this).height();
+				var multiplier = parseFloat($(this).attr('data-parallax-multiplier'));
+
+				// Check if the element is in the viewport.
+				if($(this).visible(true)) {
+					var diff = scrolled - initY;
+					var ratio = Math.round(diff/10);
+					$(this).css('transform','translateY(' + parseInt(-(ratio * multiplier)) +'px)');
+				}
+			});
 		}
 
 		// handlers

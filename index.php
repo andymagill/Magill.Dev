@@ -28,6 +28,11 @@
 	</main>
 	<!-- /main -->
 
+	<div class="double_divider bottom" data-parallax-multiplier="-2">
+		<span></span>
+		<span></span>
+	</div>
+
 	<section class="contact">
 		<div class="row wrapper">
 			<div class="col email_text">

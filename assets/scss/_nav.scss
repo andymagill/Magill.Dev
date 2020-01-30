@@ -122,8 +122,64 @@ header {
 	}
 }
 
+.double_divider {
+	transform: translateY(-216px);
+	transition: transform _duration(short);
+
+	span {
+		display: block;
+		background: rgba(_palette(bg), 0.4);
+		height: 16px;
+		margin: (_size(gutter)/2) 0;
+		transition: background-color _duration(long), margin _duration(short);
+	}
+	&.top {
+		margin-top: (_size(gutter)*2);
+		margin-bottom: (_size(gutter)*-2);
+
+		span {
+			background: rgba(_palette(bg), 0.4);
+		}
+	}
+	&.bottom {
+		margin-top: (_size(gutter)*4);
+		margin-bottom: (_size(gutter)*-4);
+
+		span {
+			background: rgba(_palette(fg), 0.4);
+		}
+	}
+	.scrolled_half_hero &.top {
+
+		span {
+			background: rgba(_palette(fg), 0.2);
+			margin: _size(gutter) 0;
+		}
+	}
+	.scrolled_footer &.bottom {
+
+		span {
+			background: rgba(_palette(bg), 0.2);
+			margin: _size(gutter) 0;
+		}
+	}
+}
+
+[data-parallax-multiplier] {
+	z-index: 9;
+	position: relative;
+}
+
 
 .footer {
 	background-color: _palette(btm_bg);
 	padding-top: (_size(gutter)*1)
+}
+
+li.nav_projects {
+	display: inline-block;
+
+	body.frontpage & {
+		display: none;
+	}
 }

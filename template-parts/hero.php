@@ -15,3 +15,8 @@ $photo 			= 	get_field('hp_hero_photo', $id);
 		</div>
 	</div>
 </section>
+
+<div class="double_divider top" data-parallax-multiplier="-3">
+	<span></span>
+	<span></span>
+</div>

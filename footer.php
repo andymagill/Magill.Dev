@@ -4,7 +4,9 @@
 				<?php magillDev()->render_menus('footer-menu', 'footer_nav'); ?>
 
 				<p class="copyright">
-					Licensed under the <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution license</a>.
+
+					This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
 				</p>
 				<!-- /copyright -->
 			</footer>

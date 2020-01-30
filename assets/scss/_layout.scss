@@ -2,12 +2,11 @@
 	min-height: 100vh;
 }
 .hero {
-	background-attachment: scroll, fixed, fixed;
-	background-image: url('../img/top-3200.svg'), url('../img/overlay.png'), url('../img/bg.jpg');
-	background-position: bottom center, center center, center center;
-	background-repeat: repeat-x, repeat, repeat-x;
-	background-size: 3200px 460px, auto, cover;
-	//min-height: 640px;
+	background-attachment: fixed, fixed;
+	background-image: url('../img/overlay.png'), url('../img/bg.jpg');
+	background-position: center center, center center;
+	background-repeat: repeat, repeat-x;
+	background-size: auto, cover;
 
 	color: _palette(bg);
 	text-align: center;
@@ -34,7 +33,6 @@
 			flex-direction: column;
 		}
 	}
-
 
 	h1 {
 		font-weight: normal;
@@ -332,21 +330,20 @@ main{
 		}
 	}
 	h2 {
-		font-family: _font(heading);
 		font-size: 3.6rem;
-		color: #54758e;
 		text-align: center;
 	}
 }
 
 .contact{
-	background-attachment: scroll;
 	background-color: _palette(btm_bg);
-	background-image: url('../img/bottom-3200.svg');
-	background-position: top center;
-	background-repeat: repeat-x;
-	background-size: 3200px 460px;
-	padding-top: 460px;
+	padding-top: (_size(gutter)*3);
+	// background-attachment: scroll;
+	// background-image: url('../img/bottom-3200.svg');
+	// background-position: top center;
+	// background-repeat: repeat-x;
+	// background-size: 3200px 460px;
+	// padding-top: 460px;
 
 	min-height: 500px;
 
@@ -411,6 +408,7 @@ div.wpforms-container {
 			transition: box-shadow _duration(short), background _duration(long), outline-offset _duration(short), outline _duration(short);
 
 			&:hover {
+				box-shadow: 0 0 20px rgba(255,255,255,0.6) inset !important;
 				outline-offset: 2px;
 				outline: 2px solid rgba(white, 0.7);
 			}
@@ -429,9 +427,8 @@ div.wpforms-container {
 					outline-offset: -4px;
 				}
 			}
-
 			&:focus {
-				background: rgba(#FFF, 0.4)!important;
+				background: rgba(#333, 0.1)!important;
 				outline: 2px solid rgba(white, 0.7);
 				outline-offset: -6px;
 			}

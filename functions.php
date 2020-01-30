@@ -17,6 +17,7 @@ class magillDev {
 		add_action('init' , array($this, 'enqueue_header_scripts'));
 		add_action('wp_print_scripts', array($this, 'enqueue_conditional_scripts'));
 		add_action('wp_enqueue_scripts', array($this, 'enqueue_styles'));
+		add_action('wp_enqueue_scripts', array($this, 'replace_core_jquery_version') );
 
 		// Remove injected classes
 		add_filter('nav_menu_css_class', array($this, 'filter_menu'), 100, 1);
@@ -44,6 +45,7 @@ class magillDev {
 
 		if (function_exists('add_theme_support'))
 		{
+			add_theme_support( 'title-tag' );
 			add_theme_support('menus');
 			add_theme_support('post-thumbnails');
 		}
@@ -84,6 +86,21 @@ class magillDev {
 	Action callbacks
 \*------------------------------------*/
 
+	// Load styles
+	function enqueue_styles()
+	{
+		wp_register_style('theme-styles', get_theme_file_uri() . '/assets/css/styles.css', array(), '0.011', 'all');
+		wp_enqueue_style('theme-styles');
+
+		// google fonts
+		wp_register_style('google-fonts', 'https://fonts.googleapis.com/css?family=Poppins:200,300,600|Merriweather:400,700&display=swap', array());
+		wp_enqueue_style('google-fonts');
+
+		// font awesome
+		wp_register_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css', array());
+		wp_enqueue_style('font-awesome');
+	}
+
 	// Load scripts
 	function enqueue_header_scripts() {
 
@@ -111,19 +128,11 @@ class magillDev {
 		// }
 	}
 
-	// Load styles
-	function enqueue_styles()
-	{
-		wp_register_style('theme-styles', get_theme_file_uri() . '/assets/css/styles.css', array(), '0.011', 'all');
-		wp_enqueue_style('theme-styles');
-
-		// google fonts
-		wp_register_style('google-fonts', 'https://fonts.googleapis.com/css?family=Poppins:200,300,600|Merriweather:400,700&display=swap', array());
-		wp_enqueue_style('google-fonts');
-
-		// font awesome
-		wp_register_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css', array());
-		wp_enqueue_style('font-awesome');
+	function replace_core_jquery_version() {
+	    wp_deregister_script( 'jquery-core' );
+	    wp_register_script( 'jquery-core', "https://code.jquery.com/jquery-3.1.1.min.js", array(), '3.1.1' );
+	    wp_deregister_script( 'jquery-migrate' );
+	    wp_register_script( 'jquery-migrate', "https://code.jquery.com/jquery-migrate-3.0.0.min.js", array(), '3.0.0' );
 	}
 
 	/*------------------------------------*\
