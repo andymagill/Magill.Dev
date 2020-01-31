@@ -64,9 +64,9 @@ if( $projects ): ?>
 								}
 								?>
 
-								<span class="close"></span>
 							</span>
 						</article>
+						<span class="close">&times;</span>
 					<?php endif; ?>
 				</li>
 				<!-- /project -->
@@ -103,22 +103,24 @@ if( $projects ): ?>
 
 <article class="project_inner">
 							<span class="project_image">
-								<img alt="portfolio all of us" data-srcset="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus.png 900w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-150x150.png 150w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-325x325.png 325w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-768x768.png 768w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-700x700.png 700w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-120x120.png 120w" sizes="(max-width: 900px) 100vw, 900px" data-src="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img src="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="portfolio all of us" srcset="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus.png 900w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-150x150.png 150w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-325x325.png 325w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-768x768.png 768w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-700x700.png 700w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-120x120.png 120w" sizes="(max-width: 900px) 100vw, 900px" /></noscript>							</span>
+								<img alt="portfolio mtpa" data-srcset="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa.jpg 900w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-150x150.jpg 150w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-325x325.jpg 325w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-768x768.jpg 768w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-700x700.jpg 700w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-120x120.jpg 120w" sizes="(max-width: 900px) 100vw, 900px" data-src="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image lazyloaded" src="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa.jpg" srcset="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa.jpg 900w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-150x150.jpg 150w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-325x325.jpg 325w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-768x768.jpg 768w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-700x700.jpg 700w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-120x120.jpg 120w"><noscript><img src="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="portfolio mtpa" srcset="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa.jpg 900w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-150x150.jpg 150w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-325x325.jpg 325w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-768x768.jpg 768w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-700x700.jpg 700w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-120x120.jpg 120w" sizes="(max-width: 900px) 100vw, 900px" /></noscript>							</span>
 
 							<span class="project_details">
-								<h3 class="project_title">All-of-Us Research Program</h3>
-								<span class="project_excerpt">This Drupal site with custom front-end theme was dedicated to the launch of a nationwide health research program. </span>
+								<h3 class="project_title">Mitsubishi Tanabe Pharma America</h3>
+								<span class="project_excerpt">Having won FDA approval for it's ALS drug Radicava, MTPA needed a platform to communicate with patients, doctors and caregivers.</span>
 								<span class="project_content">
-<p>This Drupal site with custom front-end theme was dedicated to the launch of a nationwide health research program. Multilingual Drupal powered the back-end, with custom content views for each of the seven real-world events.</p>
+<p>Having won FDA approval for it’s ALS drug Radicava, MTPA needed a platform to communicate with patients, doctors and caregivers. Enabling the website to grow with the organization, flexible layout and content features were built into the templates and the WordPress CMS. </p>
 </span>
 
 																	<span class="project_tags">
 										<span class="project_tag_label">Built with : </span>
 										<ul>
-										<li><a href="#drupal">Drupal</a></li><li><a href="#front-end">Front-end</a></li>										</ul>
+										<li><a href="#front-end">Front-end</a></li><li><a href="#wordpress">WordPress</a></li>										</ul>
 									</span>
-															</span>
+
+							</span>
 						</article>
+						<span class="close">×</span>
 
 
 

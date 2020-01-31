@@ -28,7 +28,7 @@ class magillDev {
 		add_filter('body_class', array($this, 'add_page_name_class'));
 
 		// Remove Admin bar for non-admins
-		add_filter('hide_admin_bar', array($this, 'hide_admin_bar'));
+		add_filter('after_setup_theme', array($this, 'hide_admin_bar'));
 
 	}
 
@@ -169,12 +169,10 @@ class magillDev {
 	// show Admin bar for admins only
 	function hide_admin_bar()
 	{
-		if( current_user_can('administrator') ) {
-			return true;
+		if (!current_user_can('administrator') && !is_admin()) {
+		  //show_admin_bar(false);
 		}
-		else {
-			return false;
-		}
+		show_admin_bar(false);
 	}
 
 	/*------------------------------------*\

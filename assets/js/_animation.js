@@ -10,8 +10,7 @@
 
 		// Pageload
 		toggle_topnav();
-		setParallaxScroll()
-
+		setParallaxScroll();
 
 		// scroll handler
 		$(window).scroll(function() {
@@ -67,11 +66,26 @@
 		// handlers
 
 		$('.projects li').click(function(e){
-			var id = $(this).attr('id');
+			var project_info = $(this).html();
 
-			// TODO: add modal classes
+			$('.project_popup').html(project_info);
+			$('body').addClass('popup_open');
+			attachCloseHandler();
+		});
 
-		})
+		function attachCloseHandler() {
+
+			// Project popup close button handler
+			$('.projects .close').click(function(e){
+
+				console.log('close click');
+
+				$('body').removeClass('popup_open');
+
+			});
+		}
+
+
 
 	});
 
