@@ -37,13 +37,13 @@ if( $projects ): ?>
 				<li id="project-<?= $project->ID; ?>" class="<?= $classes; ?>">
 
 					<?php if ( $project->ID ) : ?>
-						<div class="project_inner">
+						<article class="project_inner">
 							<span class="project_image">
 								<?= $thumb; ?>
 							</span>
 
 							<span class="project_details">
-								<span class="project_title"><?= $title; ?></span>
+								<h3 class="project_title"><?= $title; ?></h3>
 								<span class="project_excerpt"><?= $excerpt; ?></span>
 								<span class="project_content"><?= $content; ?></span>
 
@@ -63,8 +63,10 @@ if( $projects ): ?>
 								<?php
 								}
 								?>
+
+								<span class="close"></span>
 							</span>
-						</a>
+						</article>
 					<?php endif; ?>
 				</li>
 				<!-- /project -->
@@ -87,25 +89,36 @@ if( $projects ): ?>
 
 
 
-<div class="project_inner">
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="project_inner">
 							<span class="project_image">
-								<img alt="" data-srcset="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify.png 900w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-150x150.png 150w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-325x325.png 325w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-768x768.png 768w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-700x700.png 700w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-120x120.png 120w" sizes="(max-width: 900px) 100vw, 900px" data-src="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image ls-is-cached lazyloaded" src="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify.png" srcset="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify.png 900w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-150x150.png 150w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-325x325.png 325w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-768x768.png 768w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-700x700.png 700w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-120x120.png 120w"><noscript><img   alt="" data-srcset="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify.png 900w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-150x150.png 150w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-325x325.png 325w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-768x768.png 768w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-700x700.png 700w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-120x120.png 120w" sizes="(max-width: 900px) 100vw, 900px" data-src="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img src="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" srcset="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify.png 900w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-150x150.png 150w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-325x325.png 325w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-768x768.png 768w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-700x700.png 700w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-spotify-120x120.png 120w" sizes="(max-width: 900px) 100vw, 900px" /></noscript>							</span>
+								<img alt="portfolio all of us" data-srcset="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus.png 900w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-150x150.png 150w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-325x325.png 325w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-768x768.png 768w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-700x700.png 700w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-120x120.png 120w" sizes="(max-width: 900px) 100vw, 900px" data-src="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img src="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="portfolio all of us" srcset="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus.png 900w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-150x150.png 150w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-325x325.png 325w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-768x768.png 768w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-700x700.png 700w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-allofus-120x120.png 120w" sizes="(max-width: 900px) 100vw, 900px" /></noscript>							</span>
 
 							<span class="project_details">
-								<span class="project_title">Spotify for Artists – Co.Lab.Events</span>
-								<span class="project_excerpt">This is an event promotion website for Spotify's artist engagement operations. </span>
+								<h3 class="project_title">All-of-Us Research Program</h3>
+								<span class="project_excerpt">This Drupal site with custom front-end theme was dedicated to the launch of a nationwide health research program. </span>
 								<span class="project_content">
-<p>This is an event promotion website for Spotify’s artist engagement operations. Built on WordPress the site displays event information and collects invitee and RSVP’s via unique links.</p>
+<p>This Drupal site with custom front-end theme was dedicated to the launch of a nationwide health research program. Multilingual Drupal powered the back-end, with custom content views for each of the seven real-world events.</p>
 </span>
 
 																	<span class="project_tags">
 										<span class="project_tag_label">Built with : </span>
 										<ul>
-										<li><a href="#front-end">Front-end</a></li><li><a href="#wordpress">WordPress</a></li>										</ul>
+										<li><a href="#drupal">Drupal</a></li><li><a href="#front-end">Front-end</a></li>										</ul>
 									</span>
 															</span>
-
-									</div>
+						</article>
 
 
 

@@ -11,7 +11,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	color: _palette(heading);
 	font-family: _font(heading);
-	font-weight: _font(heading);
+	font-weight: bold;
 	line-height: 1.5;
 
 	a {

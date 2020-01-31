@@ -362,6 +362,7 @@ main{
 		background: _palette(bg);
 		padding: _size(gutter)*2;
 
+
 		display: flex;
 		justify-content: center;
 
@@ -370,6 +371,11 @@ main{
 
 		@include respond(_size(mobile)) {
 			flex-direction: column;
+			width: 80%;
+			margin: 0 auto;
+			height: 100%;
+
+			padding: _size(gutter) 9%;
 		}
 
 		.project_image{
@@ -377,34 +383,73 @@ main{
 			max-width: 40%;
 
 			@include respond(_size(mobile)) {
-				max-width: 90%;
+				max-width: 100%;
 			}
 
 			img {
-				max-height: 420px;
+				max-height: 480px;
+
+				@include respond(_size(mobile)) {
+					max-height: none;
+					//max-width: 360px;
+				}
 			}
 		}
 	}
 	.project_details {
 		display: inline-block;
+		position: relative;
 		max-width: 60%;
 		text-align: left;
 		padding-left: _size(gutter)*2;
 
-		max-width: 450px;
+		max-width: 560px;
 
+		@include respond(_size(mobile)) {
+			padding-left: 0;
+			margin: _size(gutter) auto 0 auto;
+			//max-width: 360px;
+		}
 		> span {
 			display: block;
+			margin: _size(gutter)/2 0;
 		}
 	}
-	.project_title {
+	h3.project_title {
+		margin-top: 0;
 		font-family: _font(heading);
 		font-size: 3.2rem;
 		color: _palette(heading);
-		font-weight: 600;
+		font-weight: bold;
+		pointer-events: none;
+
+		// &::after {
+		// 	content: '×';
+		// 	display: inline-block;
+		// 	position: absolute;
+		// 	right: 0;
+		// 	top: 0;
+
+		// 	cursor: pointer;
+		// 	transition: color _duration(quick), text-shadow _duration(moderate);
+
+		// 	pointer-events: auto;
+
+		// }
+		// &:hover::after {
+		// 	-webkit-text-stroke: 1px _palette(fg);
+		// 	color: white;
+		// 	text-shadow:
+		// 		3px 3px 0 #000,
+		// 		-1px -1px 0 #000,
+		// 		1px -1px 0 #000,
+		// 		-1px 1px 0 #000,
+		// 		1px 1px 0 #000;
+		// }
 	}
 	.project_tags {
 		text-align: right;
+		margin-top: 16px;
 
 		a{
 		 	margin: 0 0 0 16px;
@@ -416,17 +461,14 @@ main{
 			display: inline-block;
 		}
 	}
+	.project_excerpt {
+		font-weight: bold;
+	}
 }
 
 .contact{
 	background-color: _palette(btm_bg);
-	padding-top: (_size(gutter)*3);
-	// background-attachment: scroll;
-	// background-image: url('../img/bottom-3200.svg');
-	// background-position: top center;
-	// background-repeat: repeat-x;
-	// background-size: 3200px 460px;
-	// padding-top: 460px;
+	padding-top: _size(gutter)*3;
 
 	min-height: 500px;
 
