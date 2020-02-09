@@ -336,6 +336,10 @@ remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 //remove oembed tags
 remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
 remove_action('wp_head', 'wp_oembed_add_host_js');
+
+// Add a filter to remove srcset attribute from generated <img> tag
+add_filter( 'wp_calculate_image_srcset_meta', '__return_null' );
+
 // Add Filters
 add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
 add_filter('widget_text', 'shortcode_unautop'); // Remove <p> tags in Dynamic Sidebars (better!)

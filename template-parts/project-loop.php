@@ -23,14 +23,15 @@ if( $projects ): ?>
 				$content 	= apply_filters('the_content', $content);
 				$content 	= str_replace(']]>', ']]&gt;', $content);
 
-				$thumb 		= get_the_post_thumbnail($project->ID);
+				$thumb 		= get_the_post_thumbnail($project->ID, 'medium');
 				$tags 		= get_the_tags($project->ID);
+				$edit_link	= get_edit_post_link($project->ID);
 				$classes 	= implode(" ",get_post_class('', $project->ID));
 
 				//
 				if ( !$thumb ) {
 					$default_thumb_id = $project->ID % count($default_thumbnails);
-					$thumb = wp_get_attachment_image($default_thumbnails[$default_thumb_id]);
+					$thumb = wp_get_attachment_image($default_thumbnails[$default_thumb_id], 'medium');
 				}
 
 				?>
@@ -48,6 +49,15 @@ if( $projects ): ?>
 								<span class="project_content"><?= $content; ?></span>
 
 								<?php
+
+								if( current_user_can('administrator') ) {
+								?>
+									<div class="edit_link">
+										<a class="btn" href="<?= $edit_link ?>">Edit Project</a>
+									</div>
+								<?php
+								}
+
 								if ( is_array($tags) ) {
 								?>
 									<span class="project_tags">
@@ -63,7 +73,6 @@ if( $projects ): ?>
 								<?php
 								}
 								?>
-
 							</span>
 						</article>
 						<span class="close">&times;</span>
@@ -75,74 +84,9 @@ if( $projects ): ?>
 			</ul>
 		</div>
 
-		<div class="project_popup">
+		<div class="project_popup"> </div>
+		<!-- /project_popup -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<article class="project_inner">
-							<span class="project_image">
-								<img alt="portfolio mtpa" data-srcset="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa.jpg 900w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-150x150.jpg 150w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-325x325.jpg 325w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-768x768.jpg 768w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-700x700.jpg 700w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-120x120.jpg 120w" sizes="(max-width: 900px) 100vw, 900px" data-src="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image lazyloaded" src="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa.jpg" srcset="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa.jpg 900w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-150x150.jpg 150w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-325x325.jpg 325w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-768x768.jpg 768w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-700x700.jpg 700w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-120x120.jpg 120w"><noscript><img src="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="portfolio mtpa" srcset="https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa.jpg 900w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-150x150.jpg 150w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-325x325.jpg 325w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-768x768.jpg 768w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-700x700.jpg 700w, https://staging2.magill.dev/wp-content/uploads/2019/11/portfolio-mtpa-120x120.jpg 120w" sizes="(max-width: 900px) 100vw, 900px" /></noscript>							</span>
-
-							<span class="project_details">
-								<h3 class="project_title">Mitsubishi Tanabe Pharma America</h3>
-								<span class="project_excerpt">Having won FDA approval for it's ALS drug Radicava, MTPA needed a platform to communicate with patients, doctors and caregivers.</span>
-								<span class="project_content">
-<p>Having won FDA approval for it’s ALS drug Radicava, MTPA needed a platform to communicate with patients, doctors and caregivers. Enabling the website to grow with the organization, flexible layout and content features were built into the templates and the WordPress CMS. </p>
-</span>
-
-																	<span class="project_tags">
-										<span class="project_tag_label">Built with : </span>
-										<ul>
-										<li><a href="#front-end">Front-end</a></li><li><a href="#wordpress">WordPress</a></li>										</ul>
-									</span>
-
-							</span>
-						</article>
-						<span class="close">×</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		</div>
 	</section>
  	<!-- /projects -->
 	<?php wp_reset_postdata();
