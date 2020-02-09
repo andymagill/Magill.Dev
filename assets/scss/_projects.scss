@@ -196,7 +196,7 @@
 
 .project_popup {
 	display: flex;
-	background: rgba(_palette(fg), 0.4);
+	background: rgba(110, 96, 90, 0.6);
 
 	height: 100%;
 	bottom: 0;
@@ -364,4 +364,8 @@
 	.project_excerpt {
 		font-weight: bold;
 	}
+}
+.popup_open {
+	max-height: 100%;
+	overflow: hidden;
 }

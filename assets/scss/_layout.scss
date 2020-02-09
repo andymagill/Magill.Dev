@@ -3,7 +3,7 @@
 }
 .hero {
 	background-attachment: fixed, fixed;
-	background-image: url('../img/overlay.png'), url('../img/bg.jpg');
+	background-image: url('../img/blue-overlay.png'), url('../img/dark-forest.jpg');
 	background-position: center center, center center;
 	background-repeat: repeat, repeat-x;
 	background-size: auto, cover;
@@ -17,7 +17,7 @@
 		justify-content: space-between;
 
 		margin: 0 auto;
-		padding: (_size(gutter)*4) _size(gutter) (_size(gutter)*8) _size(gutter);
+		padding: (_size(gutter)*4) _size(gutter) (_size(gutter)*5) _size(gutter);
 		max-width: _size(tablet);
 
 		@include respond(_size(site-width)) {
