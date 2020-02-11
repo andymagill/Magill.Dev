@@ -84,8 +84,8 @@ if( $projects ): ?>
 			</ul>
 		</div>
 
-		<div class="project_popup"> </div>
-		<!-- /project_popup -->
+
+		<!-- <div class="project_popup"> </div> /project_popup -->
 
 	</section>
  	<!-- /projects -->

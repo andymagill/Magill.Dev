@@ -167,21 +167,11 @@
 
 	.project_tags {
 
-		ul{
-			@extend %nota-list;
-		}
-
 		a {
 			padding: 3px 7px;
 			background: rgba(255,255,255,0.7);
 			border-radius: 3px;
 			margin: 0 10px;
-			font-size: 1.2rem;
-
-			color: _palette(fg);
-			text-transform: uppercase;
-			text-decoration: none;
-			pointer-events: none;
 		}
 	}
 	.edit_link {
@@ -231,9 +221,12 @@
 		display: flex;
 		justify-content: center;
   		align-items: flex-start;
+  		align-self: flex-start;
+  		align-content: flex-start;
 
 		max-height: 100%;
 		overflow: hidden;
+
 
 		outline: 12px solid rgba(_palette(bg),0.8);
 		outline-offset: 16px;
@@ -243,6 +236,8 @@
 			width: 86%;
 			margin: 0 auto;
 			height: 100%;
+			overflow-y: scroll;
+			justify-content: flex-start;
 
 			padding: _size(gutter)/2 8%;
 			outline: 9px solid rgba(_palette(bg),0.8);
@@ -347,9 +342,6 @@
 		.project_tag_label{
 			display: inline-block;
 		}
-		ul {
-			display: inline-block;
-		}
 	}
 	.edit_link {
 		display: block;
@@ -365,7 +357,24 @@
 		font-weight: bold;
 	}
 }
-.popup_open {
-	max-height: 100%;
+.popup_open .page {
+	max-height: 100vh;
 	overflow: hidden;
+}
+
+.project_tags {
+
+	ul{
+		@extend %nota-list;
+		display: inline-block;
+	}
+
+	a {
+		font-size: 1.2rem;
+		color: _palette(fg);
+
+		text-transform: uppercase;
+		text-decoration: none;
+		pointer-events: none;
+	}
 }

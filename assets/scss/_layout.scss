@@ -20,16 +20,12 @@
 		padding: (_size(gutter)*4) _size(gutter) (_size(gutter)*5) _size(gutter);
 		max-width: _size(tablet);
 
-		@include respond(_size(site-width)) {
-			padding: (_size(fluid-gutter)*2.75) (_size(gutter)/1) (_size(fluid-gutter)*5.5) (_size(gutter)/1);
-		}
 		@include respond(_size(tablet)) {
+			padding: 16% 8% 18% 8%;
 			max-width: 800px;
 		}
-		@include respond(_size(mobile)) {
-			padding: (_size(gutter)*2.5) (_size(gutter)/1) (_size(fluid-gutter)*8) (_size(gutter)/1);
-		}
 		@include respond(587px) {
+			padding-top: 20%;
 			flex-direction: column;
 		}
 	}

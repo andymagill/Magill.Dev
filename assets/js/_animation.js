@@ -11,6 +11,7 @@
 		// Pageload
 		toggle_topnav();
 		setParallaxScroll();
+		prepareProjects();
 
 		// scroll handler
 		$(window).scroll(function() {
@@ -28,19 +29,19 @@
 			if ( $(document).scrollTop() > 20 ) {
 				$('body').addClass('scrolled');
 			}
-			else  {
+			else {
 				$('body').removeClass('scrolled');
 			}
 			if ( $(document).scrollTop() > ($('.hero').outerHeight()/2) ) {
 				$('body').addClass('scrolled_half_hero');
 			}
-			else  {
+			else {
 				$('body').removeClass('scrolled_half_hero');
 			}
 			if ( $(document).scrollTop() > (($('.contact').offset().top - $('.contact').height())+$('.footer').height()) ) {
 				$('body').addClass('scrolled_footer');
 			}
-			else  {
+			else {
 				$('body').removeClass('scrolled_footer');
 			}
 		}
@@ -63,8 +64,13 @@
 			});
 		}
 
-		// handlers
+		function prepareProjects() {
+			if ( $('section.projects').length > 0 ) {
+				$('body').append('<div class="project_popup"> </div>');
+			}
+		}
 
+		// handlers
 		$('.projects li').click(function(e){
 			var project_info = $(this).html();
 
@@ -76,15 +82,12 @@
 		function attachCloseHandler() {
 
 			// Project popup close button handler
-			$('.projects .close').click(function(e){
-
-				console.log('close click');
+			$('.project_popup .close').click(function(e){
 
 				$('body').removeClass('popup_open');
 
 			});
 		}
-
 
 
 	});
