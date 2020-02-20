@@ -89,7 +89,7 @@ class magillDev {
 	// Load styles
 	function enqueue_styles()
 	{
-		wp_register_style('theme-styles', get_theme_file_uri() . '/assets/css/styles.css', array(), '0.011', 'all');
+		wp_register_style('theme-styles', get_theme_file_uri() . '/assets/css/styles.css?', array(), '0.02', 'all');
 		wp_enqueue_style('theme-styles');
 
 		// google fonts
