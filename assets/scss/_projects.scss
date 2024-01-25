@@ -166,6 +166,14 @@
 			border-radius: 3px;
 			white-space: nowrap;
 		}
+		ul {
+			display: flex;
+			gap: 0.5em 1em;
+			flex-wrap: wrap;
+			justify-content: center;
+			max-height: 1.5em;
+			overflow: hidden;
+		}
 	}
 	.edit_link {
 		display: none;
@@ -359,12 +367,6 @@
 
 	ul{
 		@extend %nota-list;
-		display: flex;
-		gap: 0.5em 1em;
-		flex-wrap: wrap;
-		justify-content: center;
-		max-height: 1.5em;
-		overflow: hidden;
 	}
 	a {
 		font-size: 1.2rem;
