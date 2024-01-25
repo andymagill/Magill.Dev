@@ -7,7 +7,10 @@ Author URI: [@andymagill](https://github.com/andymagill)
 
 ## Attribution :
 Theme based on [html5blank](http://html5blank.com/).  
-Some design elements and CSS from [html5up](http://html5up.com/).  
+Some design elements and CSS from [html5up](http://html5up.com/).
+
+Hero photo by [Diego Jimenez](https://unsplash.com/@diegojimenez)
+Footer photo by [Kevin Turcios](https://unsplash.com/@kevin_turcios)
 
 ## License :
 License: Creative Commons Attribution 3.0 CC  

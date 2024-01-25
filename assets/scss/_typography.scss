@@ -151,6 +151,9 @@ hr {
 .behance a::before {
 	content: "\f1b4";
 }
+.stackoverflow a::before {
+	content: "\f16c";
+}
 .resume a::before {
 	font-family: _font(fas);
 	font-weight: 900;

@@ -65,7 +65,7 @@ class magillDev {
 	// Register Navigation
 	function register_sidebar_areas() {
 
-		// If Dynamic Sidebar Exists
+		// If Dynamic Sidebars Exists
 		if (function_exists('register_sidebar'))
 		{
 			// Define Sidebar Widget Area
@@ -73,6 +73,28 @@ class magillDev {
 				'name' => __('Sidebar', $theme),
 				'description' => __('Sidebar widget area', $theme),
 				'id' => 'sidebar',
+				'before_widget' => '<div id="%1$s" class="%2$s">',
+				'after_widget' => '</div>',
+				'before_title' => '<h3>',
+				'after_title' => '</h3>'
+			));
+
+			// Define Contact Intro Area
+			register_sidebar(array(
+				'name' => __('Contact Intro', $theme),
+				'description' => __('Contact Intro widget area', $theme),
+				'id' => 'contact_intro',
+				'before_widget' => '<div id="%1$s" class="%2$s">',
+				'after_widget' => '</div>',
+				'before_title' => '<h3>',
+				'after_title' => '</h3>'
+			));
+
+			// Define Footer Widget Area
+			register_sidebar(array(
+				'name' => __('Footer Bottom', $theme),
+				'description' => __('Footer Bottom widget area', $theme),
+				'id' => 'footer_bottom',
 				'before_widget' => '<div id="%1$s" class="%2$s">',
 				'after_widget' => '</div>',
 				'before_title' => '<h3>',

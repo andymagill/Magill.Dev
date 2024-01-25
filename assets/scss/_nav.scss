@@ -146,7 +146,7 @@ header {
 		margin-bottom: (_size(gutter)*-4);
 
 		span {
-			background: rgba(_palette(fg), 0.4);
+			background: rgba(188, 168, 177, 60%);
 		}
 	}
 	.scrolled_half_hero &.top {
@@ -159,7 +159,7 @@ header {
 	.scrolled_footer &.bottom {
 
 		span {
-			background: rgba(_palette(bg), 0.2);
+			background: rgba(_palette(bg), 0.25);
 			margin: _size(gutter) 0;
 		}
 	}
@@ -172,8 +172,14 @@ header {
 
 
 .footer {
+	padding-top: (_size(gutter)*1);
+	
+	background-attachment: fixed;
 	background-color: _palette(btm_bg);
-	padding-top: (_size(gutter)*1)
+    background-image: url("/wp-content/themes/magill.dev/assets/img/kevin-turcios-night-road.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 li.nav_projects {

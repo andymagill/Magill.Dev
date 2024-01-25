@@ -22,10 +22,20 @@
 			& > li {
 				position: relative;
 
-				flex-basis: 33.33%;
-				margin-bottom: 5%;
+				flex-basis: 25%;
+				margin-bottom: 3%;
 
-				span.project_details {
+				@include respond(_size(tablet)) {
+					flex-basis: 33.3%;
+				}
+				@include respond(_size(mobile)) {
+					flex-basis: 50%;
+				}
+				@include respond(_size(tiny)) {
+					flex-basis: 100%;
+					margin-bottom: 20%;
+				}
+				.project_details {
 					box-shadow: 0 0 60px -10px #333 inset;
 
 					transition: box-shadow _duration(moderate);
@@ -33,13 +43,6 @@
 					&:hover {
 						box-shadow: 0 0 120px 60px #1e2e3b inset;
 					}
-				}
-				@include respond(_size(tablet)) {
-					flex-basis: 50%;
-				}
-				@include respond(680px) {
-					flex-basis: 100%;
-					margin-bottom: 20%;
 				}
 				.project_inner {
 					display: block;
@@ -55,11 +58,9 @@
 					@include respond(680px) {
 						margin: 0 10%;
 					}
-
 					@include respond(_size(tiny)) {
 						margin: 0;
 					}
-
 					&:hover {
 						.project_excerpt {
 							display: block;
@@ -104,25 +105,23 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		padding: 0 8%;
+		padding: 0 6%;
 
 		color: _palette(bg);
-
-		@include respond(1200px) {
-			padding: 0 5%;
-		}
-		@include respond(_size(tablet)) {
-			padding: 0 10%;
-		}
+		
 		.project_title {
 			max-height: 70px;
 			overflow: hidden;
 
-			font-size: 2.6rem;
+			font-size: 2.4rem;
 			font-family: _font(heading);
 			color: _palette(bg);
 
 			margin-bottom: 0;
+
+			@include respond(_size(tiny)) {
+				font-size: 2.8rem;
+			}
 		}
 		.project_content {
 			display: none;
@@ -131,7 +130,8 @@
 		.project_excerpt {
 			display: block;
 			max-height: 0;
-			margin-top: 5%;
+			margin-top: 2%;
+			padding-bottom: 4%;
 
 			overflow: hidden;
 			opacity: 0;
@@ -164,7 +164,7 @@
 			padding: 3px 7px;
 			background: rgba(255,255,255,0.7);
 			border-radius: 3px;
-			margin: 0 10px;
+			white-space: nowrap;
 		}
 	}
 	.edit_link {
@@ -210,7 +210,7 @@
 	.project_inner {
 		position: relative;
 		background: _palette(bg);
-		padding: 8%;
+		padding: 6%;
 		display: flex;
 		justify-content: center;
   		align-items: flex-start;
@@ -285,7 +285,6 @@
 			display: block;
 			margin: _size(gutter)/2 0;
 		}
-
 	}
 	.project_content , .project_excerpt {
 		@include respond(_size(mobile)) {
@@ -294,9 +293,7 @@
 	}
 	.close {
 		position: absolute;
-		height: 32px;
-		width: 32px;
-		padding: 6px;
+		padding: 4px;
 		top: 10px;
 		right: 16px;
 		border-radius: 3px;
@@ -308,7 +305,6 @@
 		line-height: 2rem;
 
 		@include respond(_size(mobile)) {
-
 			top: 8px;
 			right: 10px;
 		}
@@ -363,9 +359,13 @@
 
 	ul{
 		@extend %nota-list;
-		display: inline-block;
+		display: flex;
+		gap: 0.5em 1em;
+		flex-wrap: wrap;
+		justify-content: center;
+		max-height: 1.5em;
+		overflow: hidden;
 	}
-
 	a {
 		font-size: 1.2rem;
 		color: _palette(fg);

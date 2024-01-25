@@ -2,11 +2,13 @@
 	min-height: 100vh;
 }
 .hero {
-	background-attachment: fixed, fixed;
-	background-image: url('../img/blue-overlay.png'), url('../img/dark-forest.jpg');
-	background-position: center center, center center;
-	background-repeat: repeat, repeat-x;
-	background-size: auto, cover;
+
+	background-attachment: fixed;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.25)), to(rgba(0, 0, 0, 0.25))), url("/wp-content/themes/magill.dev/assets/img/open-road-by-diego-jimenez.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("/wp-content/themes/magill.dev/assets/img/open-road-by-diego-jimenez.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
 	color: _palette(bg);
 	text-align: center;
@@ -155,7 +157,6 @@ main{
 }
 
 .contact{
-	background-color: _palette(btm_bg);
 	padding-top: _size(gutter)*3;
 
 	min-height: 500px;
@@ -221,7 +222,7 @@ div.wpforms-container {
 			transition: box-shadow _duration(short), background _duration(long), outline-offset _duration(short), outline _duration(short);
 
 			&:hover {
-				box-shadow: 0 0 20px rgba(255,255,255,0.6) inset !important;
+				box-shadow: 0 0 20px rgba(255,255,255,0.4) inset !important;
 				outline-offset: 2px;
 				outline: 2px solid rgba(white, 0.7);
 			}
