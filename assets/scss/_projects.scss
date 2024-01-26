@@ -5,7 +5,7 @@
 	padding: _size(gutter);
 
 	@include respond(_size(mobile)) {
-		padding: (_size(gutter)/2);
+		padding: calc(_size(gutter)/2);
 	}
 	.wrapper {
 		max-width: _size(site-width);
@@ -154,7 +154,7 @@
 		.project_tags {
 			position: absolute;
 
-			bottom: (_size(gutter)/2);
+			bottom: calc(_size(gutter)/2);
 			width: 100%;
 			left: 0;
 		}
@@ -241,7 +241,7 @@
 			overflow-y: scroll;
 			justify-content: flex-start;
 
-			padding: _size(gutter)/2 8%;
+			padding: calc(_size(gutter)/2) 8%;
 			outline: 9px solid rgba(_palette(bg),0.8);
 			outline-offset: 12px;
 		}
@@ -287,11 +287,11 @@
 		@include respond(_size(mobile)) {
 			width: 100%;
 			padding-left: 0;
-			margin: _size(gutter)/2 auto;
+			margin: calc(_size(gutter)/2) auto;
 		}
 		> span {
 			display: block;
-			margin: _size(gutter)/2 0;
+			margin: calc(_size(gutter)/2) 0;
 		}
 	}
 	.project_content , .project_excerpt {
@@ -326,7 +326,7 @@
 
 		@include respond(_size(mobile)) {
 			font-size: 2rem;
-			margin-bottom: _size(gutter)/2;
+			margin-bottom: calc(_size(gutter)/2);
 		}
 	}
 	span.project_tags {

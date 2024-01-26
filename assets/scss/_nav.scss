@@ -27,7 +27,7 @@ header {
 	& > ul {
 		position: relative;
 		display: inline-block;
-		padding: 0 (_size(gutter)/2);
+		padding: 0 calc(_size(gutter)/2);
 		margin: 0;
 		line-height: 0px;
 
@@ -54,7 +54,7 @@ header {
 		}
 	}
 	a {
-		padding: 15px (_size(gutter)/3);
+		padding: 15px calc(_size(gutter)/3);
 		margin: 2px;
 		display: inline-block;
 
@@ -66,7 +66,7 @@ header {
 
 		&:hover {
 			border-color: rgba(255, 255, 255, 0.45);
-			padding: 15px (_size(gutter)/2);
+			padding: 15px calc(_size(gutter)/2);
 
 			span {
 				//font-size: 1.4rem;
@@ -103,7 +103,7 @@ header {
 
 .middle_nav , body:not(.frontpage) .primary_nav {
 
-	padding: (_size(gutter)/2) 0;
+	padding: calc(_size(gutter)/2) 0;
 
 	a {
 		color: _palette(fg);
@@ -130,20 +130,20 @@ header {
 		display: block;
 		background: rgba(_palette(bg), 0.4);
 		height: 16px;
-		margin: (_size(gutter)/2) 0;
+		margin: calc(_size(gutter)/2) 0;
 		transition: background-color _duration(long), margin _duration(short);
 	}
 	&.top {
-		margin-top: (_size(gutter)*2);
-		margin-bottom: (_size(gutter)*-2);
+		margin-top: calc(_size(gutter)*2);
+		margin-bottom: calc(_size(gutter)*-2);
 
 		span {
 			background: rgba(_palette(bg), 0.4);
 		}
 	}
 	&.bottom {
-		margin-top: (_size(gutter)*4);
-		margin-bottom: (_size(gutter)*-4);
+		margin-top: calc(_size(gutter)*4);
+		margin-bottom: calc(_size(gutter)*-4);
 
 		span {
 			background: rgba(188, 168, 177, 60%);
@@ -172,7 +172,7 @@ header {
 
 
 .footer {
-	padding-top: (_size(gutter)*1);
+	padding-top: calc(_size(gutter)*1);
 	
 	background-attachment: fixed;
 	background-color: _palette(btm_bg);

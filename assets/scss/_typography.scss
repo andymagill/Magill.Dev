@@ -53,7 +53,7 @@ blockquote {
 	border-left: solid _size(border) _palette(border);
 	font-style: italic;
 	margin: 0 0 _size(gutter) 0;
-	padding: (_size(gutter) / 4) 0 (_size(gutter) / 4) _size(gutter);
+	padding: calc(_size(gutter) / 4) 0 calc(_size(gutter) / 4) _size(gutter);
 }
 
 code {
@@ -86,7 +86,7 @@ hr {
 	margin: _size(gutter) 0;
 
 	&.major {
-		margin: (_size(gutter) * 1.5) 0;
+		margin: calc(_size(gutter) * 1.5) 0;
 	}
 }
 
@@ -104,7 +104,7 @@ hr {
 
 .copyright {
 	margin: 0;
-	padding: (_size(gutter)/2);
+	padding: calc(_size(gutter)/2);
 
 	font-size: 1.3rem;
 	color: _palette(bg);
@@ -121,10 +121,9 @@ hr {
 	}
 }
 
-
-#project-44 {
-	.project_title {
-		//font-size: 2.2rem;
+.smaller {
+	.project_title  {
+		font-size: 2.2rem;
 	}
 }
 .icon a::before {
