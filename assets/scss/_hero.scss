@@ -29,16 +29,13 @@
 	}
 
 	h1 {
-		font-family: _font(body);
-		font-weight: normal;
-		color: _palette(bg);
-		font-size: 2.8rem;
 		margin: 0;
-		font-weight: 300;
 
-		@include respond(_size(tablet)) {
-			font-size: 2.4rem;
-		}
+		font-size: 2.4rem;
+		font-family: _font(body);
+		font-weight: 300;
+		color: _palette(bg);
+
 		@include respond(_size(mobile)) {
 			font-size: 2rem;
 		}
