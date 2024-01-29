@@ -31,6 +31,10 @@ input, select, textarea {
 	font-size: 1.6rem;
 	font-weight: normal;
 	line-height: 1.75;
+
+	@include respond(_size(mobile)) {
+		font-size: 1.4rem;
+	}
 }
 
 p {

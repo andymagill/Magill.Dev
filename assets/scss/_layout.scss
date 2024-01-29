@@ -63,7 +63,8 @@ main{
 	}
 	.col_inner {
 		margin: _size(gutter) auto;
-		max-width: 77%;
+		padding-left: 10%;
+		padding-right: 10%;
 
 		@include respond(_size(tiny)) {
 			margin-bottom: 0;

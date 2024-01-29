@@ -5,7 +5,7 @@
 	padding: _size(gutter);
 
 	@include respond(_size(mobile)) {
-		padding: calc(_size(gutter)/2);
+		padding: 8%;
 	}
 	.wrapper {
 		max-width: _size(site-width);
@@ -23,17 +23,19 @@
 				position: relative;
 
 				flex-basis: 25%;
-				margin-bottom: 3%;
+				margin-bottom: 4%;
 
 				@include respond(_size(tablet)) {
 					flex-basis: 33.3%;
+					margin-bottom: 6%;
 				}
 				@include respond(_size(mobile)) {
 					flex-basis: 50%;
+					margin-bottom: 8%;
 				}
 				@include respond(_size(tiny)) {
 					flex-basis: 100%;
-					margin-bottom: 20%;
+					margin-bottom: 10%;
 				}
 				.project_details {
 					box-shadow: 0 0 60px -10px #333 inset;
@@ -110,7 +112,7 @@
 		color: _palette(bg);
 		
 		.project_title {
-			max-height: 70px;
+			max-height: 3em;
 			overflow: hidden;
 
 			font-size: 2.4rem;
