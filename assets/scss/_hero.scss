@@ -12,15 +12,14 @@
 	.wrapper {
 		display: flex;
 		align-items: flex-start;
-		justify-content: space-between;
+		justify-content: center;
 
 		margin: 0 auto;
 		padding: calc(_size(gutter)*4) _size(gutter) calc(_size(gutter)*5) _size(gutter);
-		max-width: _size(tablet);
+		max-width: min(1280px, 90%);
 
 		@include respond(_size(tablet)) {
 			padding: 16% 8% 18% 8%;
-			max-width: 800px;
 		}
 		@include respond(587px) {
 			padding: 20% 8% 30% 8%;
@@ -39,6 +38,9 @@
 		@include respond(_size(mobile)) {
 			font-size: 2rem;
 		}
+		@include respond(_size(tiny)) {
+			font-size: 1.6rem;
+		}
 		@include respond(587px) {
 			text-align: center;
 		}
@@ -56,12 +58,16 @@
 			@include respond(_size(mobile)) {
 				font-size: 2.8rem;
 			}
+			@include respond(_size(tiny)) {
+				font-size: 2.4rem;
+			}
 		}
 	}
 	.intro {
 		display: inline-block;
 		flex-basis: 70%;
 		width: 70%;
+		max-width: clamp(360px, 54vw, 660px);
 		text-align: left;
 		margin-top: calc(_size(gutter)/2);
 		padding-right: _size(gutter);
@@ -69,7 +75,6 @@
 		@include respond(_size(tablet)) {
 			max-width: 480px;
 		}
-
 		@include respond(587px) {
 			flex-basis: 100%;
 			width: 100%;
@@ -91,7 +96,7 @@
 		position: relative;
 		flex-basis: 30%;
 		width: 30%;
-		min-width: 200px;
+		max-width: clamp(200px, 25vw, 340px);
 
 		border-radius: 9999px;
 		border: 16px solid rgba(255,255,255,0.8);
